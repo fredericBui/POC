@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Poc index{% endblock %}
+
+{% block body %}
+    <h1>Poc index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>ImageFilename</th>
+                <th>GithubLink</th>
+                <th>LiveDemoLink</th>
+                <th>Keywords</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for poc in pocs %}
+            <tr>
+                <td>{{ poc.id }}</td>
+                <td>{{ poc.name }}</td>
+                <td>{{ poc.imageFilename }}</td>
+                <td>{{ poc.githubLink }}</td>
+                <td>{{ poc.liveDemoLink }}</td>
+                <td>{{ poc.keywords }}</td>
+                <td>
+                    <a href="{{ path('admin_poc_show', {'id': poc.id}) }}">show</a>
+                    <a href="{{ path('admin_poc_edit', {'id': poc.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_poc_new') }}">Create new</a>
+{% endblock %}
