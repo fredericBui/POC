@@ -1,0 +1,50 @@
+/* My class */
+.t-center {
+    text-align: center;
+}
+
+.t-right {
+text-align: right;
+}
+
+/* Nav bar */
+nav div{
+background-color: lightblue;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+padding: 1%;
+}
+
+#navtoggle{
+display: none;
+background-color: darksalmon;
+}
+
+/* Images */
+img{
+width: 100%;
+padding: 5px;
+border-radius: 10px;
+}
+
+@media (min-width: 600px) { 
+#POC{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+}
+
+/*Card*/
+
+.fa-heart{
+color:lightgray;
+}
+
+/* Footer */
+footer{
+background-color: lightblue;
+padding: 1%;
+}
+  
+  
