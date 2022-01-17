@@ -27,15 +27,19 @@
                     <a href="/connexion" class="t-right"><i class="fas fa-user" ></i></a>
                 </div>
                     <div id="navtoggle">
-                    <a href="/tag"><p class="t-center">Tag</p></a>
-                    <a href="/langage"><p class="t-center">Langage</p></a>
-                    <a href="/category"><p class="t-center">Category</p></a>
+                    <a href="/poc"><p class="t-center">Tag</p></a>
+                    <a href="/poc"><p class="t-center">Langage</p></a>
+                    <a href="/poc"><p class="t-center">Category</p></a>
                 </div>
             </nav>
         </header>
         <div class="container">
             {% block body %}{% endblock %}
         </div>
+
+        <footer>
+            <p class="t-center">Copyright &copy; 2022 <a href="https://fr.linkedin.com/in/fr%C3%A9d%C3%A9ric-bui-a20084a4" target="_blank">Frédéric Bui</a></p>
+        </footer>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
         <script src={{asset("js/script.js")}}></script>
