@@ -10,5 +10,13 @@
             <a href="/poc"><p class="t-center">Langage</p></a>
             <a href="/poc"><p class="t-center">Category</p></a>
         </div>
+        {% if is_granted('ROLE_ADMIN') %}
+        <div id="navadmin">
+            <a href="/admin/category"><p class="t-center">Admin Category</p></a>
+            <a href="/admin/language"><p class="t-center">Admin Language</p></a>
+            <a href="/admin/poc"><p class="t-center">Admin POC</p></a>
+            <a href="/admin/user"><p class="t-center">Admin User</p></a>
+        </div>
+        {% endif %}
     </nav>
 </header>
