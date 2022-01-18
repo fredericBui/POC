@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Poc index{% endblock %}
+
+{% block body %}
+    <h1>Poc index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>ImageFilename</th>
+                <th>GithubLink</th>
+                <th>LiveDemoLink</th>
+                <th>Keywords</th>
+                <th>IsPremium</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for poc in pocs %}
+            <tr>
+                <td>{{ poc.id }}</td>
+                <td>{{ poc.name }}</td>
+                <td>
+                    <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}"/>
+                </td>
+                <td>{{ poc.githubLink }}</td>
+                <td>{{ poc.liveDemoLink }}</td>
+                <td>{{ poc.keywords }}</td>
+                <td>{{ poc.isPremium ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('catalog_show', {'id': poc.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
