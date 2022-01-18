@@ -5,40 +5,20 @@
 {% block body %}
     <h1>Poc</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ poc.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ poc.name }}</td>
-            </tr>
-            <tr>
-                <th>ImageFilename</th>
-                <td>
-                    <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}"/>
-                </td>
-            </tr>
-            <tr>
-                <th>GithubLink</th>
-                <td>{{ poc.githubLink }}</td>
-            </tr>
-            <tr>
-                <th>LiveDemoLink</th>
-                <td>{{ poc.liveDemoLink }}</td>
-            </tr>
-            <tr>
-                <th>Keywords</th>
-                <td>{{ poc.keywords }}</td>
-            </tr>
-            <tr>
-                <th>IsPremium</th>
-                <td>{{ poc.isPremium ? 'Yes' : 'No' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <article class="card">
+        <div class="card-body">
+            <p class="t-right"><i class="fas fa-heart"></i></p>
+            <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
+            <p>Name : {{ poc.name }}<br>
+            Keywords : {{ poc.keywords }} <br>
+            <strong>Langages</strong> : CSS<br>
+            Categories : Landingpage<br>
+            Premium : {{ poc.isPremium ? 'Yes' : 'No' }} <br></p>
+            
+            <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-success"><i class="fab fa-github"></i> Github Link</button></a>
+            <a href="{{ poc.liveDemoLink }}" target="_blank"><button class="btn btn-primary"></i>Live demo</button></a>
+        </div>
+    </article>
 
     <a href="{{ path('catalog_index') }}">back to list</a>
 

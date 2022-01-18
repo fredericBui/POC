@@ -1,45 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Poc index{% endblock %}
+{% block title %}Catalog{% endblock %}
 
 {% block body %}
-    <h1>Poc index</h1>
+    <h1>Catalog</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>ImageFilename</th>
-                <th>GithubLink</th>
-                <th>LiveDemoLink</th>
-                <th>Keywords</th>
-                <th>IsPremium</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for poc in pocs %}
-            <tr>
-                <td>{{ poc.id }}</td>
-                <td>{{ poc.name }}</td>
-                <td>
-                    <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}"/>
-                </td>
-                <td>{{ poc.githubLink }}</td>
-                <td>{{ poc.liveDemoLink }}</td>
-                <td>{{ poc.keywords }}</td>
-                <td>{{ poc.isPremium ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a href="{{ path('catalog_show', {'id': poc.id}) }}">show</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    {% for poc in pocs %}
+        <article class="card">
+            <div class="card-body">
+                <p class="t-right"><i class="fas fa-heart"></i></p>
+                <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
+                <p>Name : {{ poc.name }}<br>
+                Keywords : {{ poc.keywords }} <br>
+                <strong>Langages</strong> : CSS<br>
+                Categories : Landingpage<br>
+                Premium : {{ poc.isPremium ? 'Yes' : 'No' }} <br>
+                <a href="{{ path('catalog_show', {'id': poc.id}) }}">Details</a></p><br>
+                
+                <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-success"><i class="fab fa-github"></i> Github Link</button></a>
+                <a href="{{ poc.liveDemoLink }}" target="_blank"><button class="btn btn-primary"></i>Live demo</button></a>
+                
+            </div>
+        </article>
+    {% else %}
+        <p>No records found</p>
+    {% endfor %}
+
 
 {% endblock %}
