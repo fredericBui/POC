@@ -10,8 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Email</th>
-                <th>Roles</th>
-                <th>Password</th>
+                <th>Pseudo</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,8 +19,7 @@
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.email }}</td>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
+                <td>{{ user.pseudo }}</td>
                 <td>
                     <a href="{{ path('admin_user_show', {'id': user.id}) }}">show</a>
                     <a href="{{ path('admin_user_edit', {'id': user.id}) }}">edit</a>
