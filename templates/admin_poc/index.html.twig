@@ -23,7 +23,9 @@
             <tr>
                 <td>{{ poc.id }}</td>
                 <td>{{ poc.name }}</td>
-                <td>{{ poc.imageFilename }}</td>
+                <td>
+                    <img src= "{{ asset('uploads/' ~ poc.imageFilename ) }}"/>
+                </td>
                 <td>{{ poc.githubLink }}</td>
                 <td>{{ poc.liveDemoLink }}</td>
                 <td>{{ poc.keywords }}</td>

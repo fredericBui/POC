@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Poc;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +14,9 @@ class PocType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('imageFilename')
+            ->add('image', FileType::class, [
+                'mapped' => false
+            ])
             ->add('githubLink')
             ->add('liveDemoLink')
             ->add('keywords')

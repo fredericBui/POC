@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Poc;
 use App\Form\PocType;
 use App\Repository\PocRepository;
+use App\Service\FileUploader;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,13 +30,20 @@ class AdminPocController extends AbstractController
     /**
      * @Route("/new", name="admin_poc_new", methods={"GET", "POST"})
      */
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request,FileUploader $fileUploader, EntityManagerInterface $entityManager): Response
     {
         $poc = new Poc();
         $form = $this->createForm(PocType::class, $poc);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
+            $imageFile = $form->get('image')->getData();
+            if ($imageFile) {
+                $imageFileName = $fileUploader->upload($imageFile);
+                $poc->setImageFilename($imageFileName);
+            }
+            
             $entityManager->persist($poc);
             $entityManager->flush();
 
@@ -61,12 +69,18 @@ class AdminPocController extends AbstractController
     /**
      * @Route("/{id}/edit", name="admin_poc_edit", methods={"GET", "POST"})
      */
-    public function edit(Request $request, Poc $poc, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request,FileUploader $fileUploader , Poc $poc, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(PocType::class, $poc);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imageFile = $form->get('image')->getData();
+            if ($imageFile) {
+                $imageFileName = $fileUploader->upload($imageFile);
+                $poc->setImageFilename($imageFileName);
+            }
+            
             $entityManager->flush();
 
             return $this->redirectToRoute('admin_poc_index', [], Response::HTTP_SEE_OTHER);
