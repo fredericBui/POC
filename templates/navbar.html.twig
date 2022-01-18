@@ -2,20 +2,20 @@
     <nav>
         <div id="navstable">
             <i class="fas fa-bars" onclick="myFunction()" ></i>
-            <a href="/home"><p class="t-center">POC - Piece of code</p></a>
-            <a href="/login" class="t-right"><i class="fas fa-user" ></i></a>
+            <a href={{path("home")}}><p class="t-center">POC - Piece of code</p></a>
+            <a href={{path("app_login")}} class="t-right"><i class="fas fa-user" ></i></a>
         </div>
         <div id="navtoggle">
-            <a href="/poc"><p class="t-center">Tag</p></a>
-            <a href="/poc"><p class="t-center">Langage</p></a>
-            <a href="/poc"><p class="t-center">Category</p></a>
+            <a href={{path("poc")}}><p class="t-center">Tag</p></a>
+            <a href={{path("poc")}}><p class="t-center">Langage</p></a>
+            <a href={{path("poc")}}><p class="t-center">Category</p></a>
         </div>
         {% if is_granted('ROLE_ADMIN') %}
         <div id="navadmin">
-            <a href="/admin/category"><p class="t-center">Admin Category</p></a>
-            <a href="/admin/language"><p class="t-center">Admin Language</p></a>
-            <a href="/admin/poc"><p class="t-center">Admin POC</p></a>
-            <a href="/admin/user"><p class="t-center">Admin User</p></a>
+            <a href={{path("admin_category_index")}}><p class="t-center">Admin Category</p></a>
+            <a href={{path("admin_language_index")}}><p class="t-center">Admin Language</p></a>
+            <a href={{path("admin_poc_index")}}><p class="t-center">Admin POC</p></a>
+            <a href={{path("admin_user_index")}}><p class="t-center">Admin User</p></a>
         </div>
         {% endif %}
     </nav>

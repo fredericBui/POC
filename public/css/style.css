@@ -17,8 +17,7 @@ padding: 1%;
 
 nav #navadmin{
 background-color: lightgreen;
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
+display: flex;
 padding: 1%;
 }
 
