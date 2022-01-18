@@ -59,6 +59,11 @@ class Poc
      */
     private $categories;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isPremium;
+
     public function __construct()
     {
         $this->languages = new ArrayCollection();
@@ -186,6 +191,18 @@ class Poc
     public function removeCategory(Category $category): self
     {
         $this->categories->removeElement($category);
+
+        return $this;
+    }
+
+    public function getIsPremium(): ?bool
+    {
+        return $this->isPremium;
+    }
+
+    public function setIsPremium(bool $isPremium): self
+    {
+        $this->isPremium = $isPremium;
 
         return $this;
     }
