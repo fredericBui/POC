@@ -14,6 +14,7 @@
                 <th>GithubLink</th>
                 <th>LiveDemoLink</th>
                 <th>Keywords</th>
+                <th>Premium (1=yes)</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
                 <td>{{ poc.githubLink }}</td>
                 <td>{{ poc.liveDemoLink }}</td>
                 <td>{{ poc.keywords }}</td>
+                <td>{{ poc.isPremium }}</td>
                 <td>
                     <a href="{{ path('admin_poc_show', {'id': poc.id}) }}">show</a>
                     <a href="{{ path('admin_poc_edit', {'id': poc.id}) }}">edit</a>

@@ -20,6 +20,7 @@ class PocType extends AbstractType
             ->add('author')
             ->add('languages')
             ->add('categories')
+            ->add('isPremium')
         ;
     }
 
