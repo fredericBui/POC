@@ -25,57 +25,57 @@ class CartService
         ]);
     }
 
-    // Ajoute un POC au panier
-    public function add(Poc $Poc)
+    // Ajoute un poc au panier
+    public function add(Poc $poc)
     {
         // Récupère un panier existant
         $cart = $this->get();
 
-        // Récupère l'id du Poc
-        $PocId = $Poc->getId();
+        // Récupère l'id du poc
+        $pocId = $poc->getId();
 
-        // Si l'id du Poc n'existe pas
-        if(!isset($Poc['elements'][$PocId]))
+        // Si l'id du poc n'existe pas dans les éléments du panier cart
+        if(!isset($cart['elements'][$pocId]))
         {
-            $Poc['elements'][$PocId] = [
-                'book' => $Poc,
+            $cart['elements'][$pocId] = [
+                'poc' => $poc,
                 'quantity' => 0
             ];
         }
 
         // Ajoute le prix du livre au total du panier
-        $cart['total'] = $cart['total'] + $Poc->getPrice();
+        $cart['total'] = $cart['total'] + $poc->getPrice();
         // Ajoute +1 au nombre d'élément du panier
-        $cart['elements'][$PocId]['quantity'] = $cart['elements'][$PocId]['quantity'] + 1;
+        $cart['elements'][$pocId]['quantity'] = $cart['elements'][$pocId]['quantity'] + 1;
 
         // Enregistre le panier dans la session
         $this->sessionInterface->set('cart', $cart);
     }
 
     // Supprime un element du panier 
-    public function remove(Poc $Poc)
+    public function remove(Poc $poc)
     {
         // Récupère un panier existant
         $cart = $this->get();
 
-        // Récupère l'id du Poc
-        $PocId = $Poc->getId();
+        // Récupère l'id du poc
+        $pocId = $poc->getId();
 
-        // Si il n'y a pas le Poc en question dans le panier ne rien faire
-        if(!isset($cart['elements'][$PocId]))
+        // Si il n'y a pas le poc en question dans le panier ne rien faire
+        if(!isset($cart['elements'][$pocId]))
         {
             return;
         }
 
-        // Déduis le prix du Poc du panier total
-        $cart['total'] = $cart['total'] - $Poc->getPrice();
+        // Déduis le prix du poc du panier total
+        $cart['total'] = $cart['total'] - $poc->getPrice();
 
         // Ajoute -1 au nombre d'élément du panier
-        $cart['elements'][$PocId]['quantity'] =  $cart['elements'][$PocId]['quantity'] - 1;
+        $cart['elements'][$pocId]['quantity'] =  $cart['elements'][$pocId]['quantity'] - 1;
 
-        // Enleve le Poc en question du panier si sa quantité est de zéro
-        if ($cart['elements'][$PocId]['quantity'] <= 0){
-            unset($cart['elements'][$PocId]);
+        // Enleve le poc en question du panier si sa quantité est de zéro
+        if ($cart['elements'][$pocId]['quantity'] <= 0){
+            unset($cart['elements'][$pocId]);
         }
 
         // Enregistre le panier dans la session
