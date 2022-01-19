@@ -15,6 +15,7 @@
                 <th>LiveDemoLink</th>
                 <th>Keywords</th>
                 <th>Premium (1=yes)</th>
+                <th>Price</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -30,6 +31,7 @@
                 <td>{{ poc.liveDemoLink }}</td>
                 <td>{{ poc.keywords }}</td>
                 <td>{{ poc.isPremium }}</td>
+                <td>{{ poc.price }}</td>
                 <td>
                     <a href="{{ path('admin_poc_show', {'id': poc.id}) }}">show</a>
                     <a href="{{ path('admin_poc_edit', {'id': poc.id}) }}">edit</a>

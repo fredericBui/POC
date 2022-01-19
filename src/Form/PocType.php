@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Poc;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -24,6 +25,7 @@ class PocType extends AbstractType
             ->add('languages')
             ->add('categories')
             ->add('isPremium')
+            ->add('price',MoneyType::class)
         ;
     }
 

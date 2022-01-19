@@ -11,9 +11,11 @@
             <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
             <p>Name : {{ poc.name }}<br>
             Keywords : {{ poc.keywords }} <br>
-            <strong>Langages</strong> : CSS<br>
-            Categories : Landingpage<br>
-            Premium : {{ poc.isPremium ? 'Yes' : 'No' }} <br></p>
+            <strong>Langages</strong> : <br>
+            Categories : <br>
+            Premium : {{ poc.isPremium ? 'Yes' : 'No' }} <br>
+            Price : {{ poc.price }} <br>
+            </p>
             
             <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-success"><i class="fab fa-github"></i> Github Link</button></a>
             <a href="{{ poc.liveDemoLink }}" target="_blank"><button class="btn btn-primary"></i>Live demo</button></a>

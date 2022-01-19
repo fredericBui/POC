@@ -64,6 +64,11 @@ class Poc
      */
     private $isPremium;
 
+    /**
+     * @ORM\Column(type="decimal", precision=10, scale=2)
+     */
+    private $price;
+
     public function __construct()
     {
         $this->languages = new ArrayCollection();
@@ -203,6 +208,18 @@ class Poc
     public function setIsPremium(bool $isPremium): self
     {
         $this->isPremium = $isPremium;
+
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(string $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }
