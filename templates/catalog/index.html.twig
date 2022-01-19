@@ -16,7 +16,8 @@
                 Categories : <br>
                 Premium : {{ poc.isPremium ? 'Yes' : 'No' }} <br>
                 Price : {{ poc.price }} <br>
-                <a href="{{ path('catalog_show', {'id': poc.id}) }}">Details</a></p><br>
+                <a href="{{ path('catalog_show', {'id': poc.id}) }}">Details</a><br>
+                <a href="{{ path('cart_add', {'id': poc.id}) }}">Add to cart</a></p><br>
                 
                 <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-success"><i class="fab fa-github"></i> Github Link</button></a>
                 <a href="{{ poc.liveDemoLink }}" target="_blank"><button class="btn btn-primary"></i>Live demo</button></a>
