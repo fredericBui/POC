@@ -3,11 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Poc;
-use App\Form\Poc1Type;
 use App\Repository\PocRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -22,6 +19,7 @@ class CatalogController extends AbstractController
     public function index(PocRepository $pocRepository): Response
     {
         return $this->render('catalog/index.html.twig', [
+            // On retrouve les mêmes méthodes que j'expliquerais dans les repository
             'pocs' => $pocRepository->findAll(),
         ]);
     }

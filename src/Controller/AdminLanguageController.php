@@ -1,5 +1,7 @@
 <?php
 
+// Ici tout est identique sauf que category est remplacé par Language
+
 namespace App\Controller;
 
 use App\Entity\Language;

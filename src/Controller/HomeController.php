@@ -1,5 +1,8 @@
 <?php
 
+// Ceci est le plus basique des controller qu'on puisse trouver
+// Il retourne une vue et fais passer une variable twig
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

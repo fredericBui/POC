@@ -1,5 +1,7 @@
 <?php
 
+// Controller pour l'inscription
+
 namespace App\Controller;
 
 use App\Entity\User;
@@ -16,14 +18,16 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/register", name="app_register")
      */
+    // Nouvelle fonction qui utilise la class UserPasswordHasherInterface qui permet d'hasher les mot de passe
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
+        // Création d'un nouvelle utilisateur à partir de la class User
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
+            // hash le mot de pass
             $user->setPassword(
             $userPasswordHasher->hashPassword(
                     $user,
@@ -39,6 +43,11 @@ class RegistrationController extends AbstractController
         }
 
         return $this->render('registration/register.html.twig', [
+            // Quelle différence entre :
+                // 'registrationForm' => $form->createView()
+                // et 
+                // 'registrationForm' => $form
+            // createView() permet de ne pas avoir à préciser renderForm plus haut !
             'registrationForm' => $form->createView(),
         ]);
     }

@@ -1,8 +1,11 @@
 <?php
 
+// Les repository sont les class qui intéragissent avec la base de donnée tandis que les entités sont les tables qui sont stockés en base de donnée
+
 namespace App\Repository;
 
 use App\Entity\Category;
+// Utilisation de doctrine pour réaliser des requêtes SQL
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

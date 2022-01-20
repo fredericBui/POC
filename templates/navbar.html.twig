@@ -6,10 +6,10 @@
             <a href={{path("app_login")}} class="t-right"><i class="fas fa-user" ></i></a>
         </div>
         <div id="navtoggle">
-            <a href={{path("catalog_index")}}><p class="t-center">Tag</p></a>
-            <a href={{path("catalog_index")}}><p class="t-center">Langage</p></a>
-            <a href={{path("catalog_index")}}><p class="t-center">Category</p></a>
-            <a href={{path("cart_index")}}><p class="t-center">Panier</p></a>
+            <a href={{path("catalog_index")}}><p class="t-center">Search by Tag</p></a>
+            <a href={{path("catalog_index")}}><p class="t-center">Search by Langage</p></a>
+            <a href={{path("catalog_index")}}><p class="t-center">Search by Category</p></a>
+            <a href={{path("cart_index")}}><p class="t-center">Cart</p></a>
         </div>
         {% if is_granted('ROLE_ADMIN') %}
         <div id="navadmin">

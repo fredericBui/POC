@@ -1,5 +1,7 @@
 <?php
 
+// Tout pareil : des colonnes avec leur type, des getter et setter
+
 namespace App\Entity;
 
 use App\Repository\PaymentRepository;

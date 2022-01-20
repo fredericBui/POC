@@ -1,5 +1,7 @@
 <?php
 
+// Particularité de cette entité : la colonne role de type json
+
 namespace App\Entity;
 
 use App\Repository\UserRepository;
@@ -77,6 +79,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return (string) $this->email;
     }
 
+    // Par défaut on donne le role user
     /**
      * @see UserInterface
      */
@@ -111,6 +114,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    // Le petit "grain de sel" permettant de complexifié le mot de passe sera appellé si et seulement nous utilisons des modes de hashage tel que bcrypt ou sodium
+    // Mais attention cette méthode est déprécié depuis symfony v5.3 depuis que LegacyPasswordAuthenticatedUserInterface a été implémenté
     /**
      * Returning a salt is only needed, if you are not using a modern
      * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
@@ -122,6 +127,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return null;
     }
 
+    // Permet de supprimer des données sensibles concernant l'utilisateur
     /**
      * @see UserInterface
      */

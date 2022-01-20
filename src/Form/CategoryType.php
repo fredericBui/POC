@@ -1,5 +1,9 @@
 <?php
 
+// Tous les form suivent le même schéma :
+// Ajout des champs en forçant le type si besoin
+// Petit plus pour le registrationForm avec l'ajout d'attribut
+
 namespace App\Form;
 
 use App\Entity\Category;

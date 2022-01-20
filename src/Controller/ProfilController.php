@@ -1,5 +1,8 @@
 <?php
 
+// Schéma similaire aux admincontroller sauf qu'on a supprimer index, new et delete
+// L'idée ici est de donner la possibilité à l'utilisateur de pouvoir seulement voir et modifier son profil
+
 namespace App\Controller;
 
 use App\Entity\User;
@@ -22,6 +25,7 @@ class ProfilController extends AbstractController
      */
     public function show(): Response
     {
+        // C'est cette méthode qui permet de récupérer l'utilisateur actuellement connecter
         $user = $this->getUser();
         return $this->render('profil/show.html.twig', [
             'user' => $user,
@@ -33,7 +37,11 @@ class ProfilController extends AbstractController
      */
     public function edit(Request $request, EntityManagerInterface $entityManager): Response
     {
+        // Idem modification sur l'utilisateur actuellement connecté
         $user = $this->getUser();
+
+        // Ici on fais appelle à un form spécial pour l'utilisateur
+        // Je viens de comprendre que le deuxième paramètre de createForm permet de remplir les values du form avec ce que contient user
         $form = $this->createForm(User1Type::class, $user);
         $form->handleRequest($request);
 

@@ -1,5 +1,6 @@
 <?php
 
+// Le dossier à créer
 // src/Service/FileUploader.php
 namespace App\Service;
 
@@ -10,6 +11,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class FileUploader
 {
     private $targetDirectory;
+    //Le sluger transforme une chaine de caratère en ASCII
     private $slugger;
 
     public function __construct($targetDirectory, SluggerInterface $slugger)
@@ -18,6 +20,7 @@ class FileUploader
         $this->slugger = $slugger;
     }
 
+    // Télécharge un fichier
     public function upload(UploadedFile $file)
     {
         $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
@@ -33,6 +36,7 @@ class FileUploader
         return $fileName;
     }
 
+    // Stocke le fichier vers la destination défini dans le services.yaml
     public function getTargetDirectory()
     {
         return $this->targetDirectory;
