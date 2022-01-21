@@ -33,13 +33,13 @@ class PaymentService
         // Création d'un tableau
         $items = [];
         // Pour chaque élément dans le cart ajouter un élément dans le tableau items
-        foreach ($cart['element'] as $bookId => $element)
+        foreach ($cart['elements'] as $pocId => $element)
         {
             $items[] = [
                 'amount' => $element['poc']->getPrice() * 100,
                 'quantity' => $element['quantity'],
                 'currency' => 'eur',
-                'name' => $element['poc']->getTitle()
+                'name' => $element['poc']->getName()
             ];
         }
 
@@ -48,8 +48,8 @@ class PaymentService
         $successUrl = $protocol . '://' . $host . '/payment/success/{CHECKOUT_SESSION_ID}';
         $failureUrl = $protocol . '://' . $host . '/payment/failure/{CHECKOUT_SESSION_ID}';
 
-        $session = $this->stripe->checkout->session->create([
-            'succes_url' => $successUrl,
+        $session = $this->stripe->checkout->sessions->create([
+            'success_url' => $successUrl,
             'cancel_url' => $failureUrl,
             'payment_method_types' => ['card'],
             'mode' => 'payment',
