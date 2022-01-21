@@ -27,13 +27,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
     // Ici la route est le nom de notre site
     // name est le chemin interne que nous pourrons réutiliser avec la fonction twig path
-    // la méthods get nous indique que cette fonction retournera uniquement un affichage
+    // la méthods GET permet de récupérer des données envoyées saisies dans la barre url ou via une balise <a>
 
     /**
      * @Route("/", name="admin_category_index", methods={"GET"})
      */
 
-     //Ici on utilise l'autowiring en paramètre de index ce qui nous permet de créer un objet à partir d'un class
+     //Ici on utilise l'autowiring en paramètre de index ce qui nous permet à Symfony de créer un objet à partir d'un class
      // L'objet ainsi créer pourra être utiliser dans la fonction
 
     public function index(CategoryRepository $categoryRepository): Response
@@ -45,7 +45,7 @@ use Symfony\Component\Routing\Annotation\Route;
         ]);
     }
 
-    // la méthods post nous indique que cette fonction retournera des données saisies par l'utilisateur
+    // la méthods POST permet d'envoyer des données qui seront stockées dans une supergobale nommé $_POST
     /**
      * @Route("/new", name="admin_category_new", methods={"GET", "POST"})
      */
@@ -59,7 +59,7 @@ use Symfony\Component\Routing\Annotation\Route;
         $category = new Category();
 
         // Création d'un formulaire à partir de la class categoryType
-        // Les données du formulaire iront dans category ?
+        // Les données du formulaire iront dans category 
         $form = $this->createForm(CategoryType::class, $category);
         // Récupère les données du formulaire
         $form->handleRequest($request);
@@ -106,7 +106,7 @@ use Symfony\Component\Routing\Annotation\Route;
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // notons ici que flush permet de faire une requête SQL alter table
+            // notons ici que flush permet de faire une requête SQL UPDATE
             $entityManager->flush();
 
             return $this->redirectToRoute('admin_category_index', [], Response::HTTP_SEE_OTHER);
@@ -125,7 +125,7 @@ use Symfony\Component\Routing\Annotation\Route;
     {
         // Ici une protection d'attaque CSRF est mise en place
         if ($this->isCsrfTokenValid('delete'.$category->getId(), $request->request->get('_token'))) {
-            // remove = SQL drop table
+            // remove = SQL DELETE
             $entityManager->remove($category);
             $entityManager->flush();
         }

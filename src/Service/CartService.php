@@ -43,7 +43,7 @@ class CartService
             ];
         }
 
-        // Ajoute le prix du livre au total du panier
+        // Ajoute le prix du POC au total du panier
         $cart['total'] = $cart['total'] + $poc->getPrice();
         // Ajoute +1 au nombre d'élément du panier
         $cart['elements'][$pocId]['quantity'] = $cart['elements'][$pocId]['quantity'] + 1;
