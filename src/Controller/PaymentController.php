@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Payment;
+use App\Entity\Purchase;
 use App\Repository\PaymentRepository;
 use App\Service\CartService;
 use App\Service\PaymentService;
+use DateTime;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -38,7 +40,7 @@ class PaymentController extends AbstractController
     /**
      * @Route("/payment/success/{stripeSessionId}", name="payment_success")
      */
-    public function success(string $stripeSessionId, EntityManagerInterface $entityManager, PaymentRepository $paymentRepository, CartService $cartService): Response
+    public function success(string $stripeSessionId, EntityManagerInterface $entityManager, CartService $cartService, PaymentRepository $paymentRepository): Response
     {
 
         $paymentRequest = $paymentRepository->findOneBy([
@@ -50,7 +52,26 @@ class PaymentController extends AbstractController
 
         //$paymentRequest->setValidated(true);
         //$paymentRequest->setPaidAt(new DateTime());
-;
+
+        $order = new Purchase();
+        $order->setCreateAt(new DateTimeImmutable());
+        //$order->setPoc();
+        $order->setBuyer($this->getUser());
+        $order->setReference(strval(rand(1000000,999999999)));
+        $entityManager->persist($order);
+
+        /*$cart = $cartService->get();
+        foreach ($cart['elements'] as $pocId => $element)
+        {
+            $poc = $pocRepository->find($pocId);
+            $orderedQuantity = new OrderedQuantity();
+            $orderedQuantity->setQuantity($element['quantity']);
+            $orderedQuantity->setPoc($poc);
+            $orderedQuantity->setFromOrder($order);
+            $entityManager->persist($orderedQuantity);
+
+        };*/
+
         $entityManager->flush();
 
         $cartService->clear();
@@ -73,7 +94,6 @@ class PaymentController extends AbstractController
             return $this->redirectToRoute('cart_index');
         }
 
-        $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($paymentRequest);
         $entityManager->flush();
 

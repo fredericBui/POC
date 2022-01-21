@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Purchase</th>
                 <th>CreateAt</th>
                 <th>StripeSessionId</th>
                 <th>actions</th>
@@ -18,6 +19,7 @@
         {% for payment in payments %}
             <tr>
                 <td>{{ payment.id }}</td>
+                <td>{{ payment.purchase }}</td>
                 <td>{{ payment.createAt ? payment.createAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ payment.stripeSessionId }}</td>
                 <td>

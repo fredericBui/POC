@@ -9,6 +9,8 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Buyer</th>
+                <th>Poc</th>
                 <th>CreateAt</th>
                 <th>Reference</th>
                 <th>actions</th>
@@ -18,6 +20,8 @@
         {% for purchase in purchases %}
             <tr>
                 <td>{{ purchase.id }}</td>
+                <td>{{ purchase.buyer }}</td>
+                <td>{{ purchase.poc }}</td>
                 <td>{{ purchase.createAt ? purchase.createAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ purchase.reference }}</td>
                 <td>
