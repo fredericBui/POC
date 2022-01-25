@@ -1,0 +1,31 @@
+<nav id="profilMenu">
+
+    {% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN') == false %}
+    <div >
+        <a href="#"><p class="t-center">My POC</p></a>
+        <a href="#"><p class="t-center">Log out</p></a>
+        <a href="#"><p class="t-center">Dark Mode</p></a>
+    </div>
+    {% elseif is_granted('ROLE_ADMIN') %}
+    <div>
+        <p>Administration interface</p>
+        <hr>
+        <a href={{path("admin_poc_index")}}><p class="t-center">POC</p></a>
+        <a href={{path("admin_user_index")}}><p class="t-center">User</p></a>
+        <a href={{path("admin_language_index")}}><p class="t-center">Language</p></a>
+        <a href={{path("admin_category_index")}}><p class="t-center">Category</p></a>
+        <a href={{path("admin_purchase_index")}}><p class="t-center">Purchase</p></a>
+        <a href={{path("admin_payment_index")}}><p class="t-center">Payment</p></a>
+        <hr>
+        <a href="#"><p class="t-center">Log out</p></a>
+        <a href="#"><p class="t-center">Dark Mode</p></a>
+    </div>
+    {% else %}
+    <div>
+        <a href={{path("app_login")}}><p class="t-center">Login</p></a>
+        <a href={{path("app_register")}}><p class="t-center">Register</p></a>
+        <a href="#"><p class="t-center">Dark Mode</p></a>
+    </div>
+    {% endif %}
+
+</nav>

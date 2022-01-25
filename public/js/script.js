@@ -7,6 +7,11 @@ if (x.style.display === "none") {
 }
 }
 
+//Marche pas
+function click() {
+alert("Hello");
+}
+
 const heart = document.querySelector('.fa-heart');
 
 heart.addEventListener('click', event => {
