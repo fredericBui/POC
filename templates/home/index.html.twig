@@ -10,11 +10,57 @@
     Sorry, your browser doesn't support embedded videos.
 </video>
 
-<h2 class="t-center">Free POC (piece of code) by</h2>
+<h2 class="t-center">Free POC (piece of code)</h2>
 
-<section id="POC">
-  <a href={{path("catalog_index")}}><img src={{asset("media/tag.png")}} alt=""></a>
-  <a href={{path("catalog_index")}}><img src={{asset("media/langage.png")}} alt=""></a>
-  <a href={{path("catalog_index")}}><img src={{asset("media/category.png")}} alt=""></a>
-</section>
+<div class="input-group rounded">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  <span class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </span>
+</div>
+<br>
+
+<button>e-commerce</button>
+<button>Landingpage</button>
+<button>Social Network</button>
+<button>Blog</button>
+<button>HTML</button>
+<button>CSS</button>
+<button>JS</button>
+<button>Bootstrap</button>
+<button>React</button>
+<button>Symfony</button>
+<button>&ltform&gt</button>
+<button>&ltnav&gt</button>
+<button>&ltdiv&gt</button>
+<button>&ltheader&gt</button>
+<button>&ltmain&gt</button>
+<button>&ltfooter&gt</button>
+<button>&ltaside&gt</button>
+
+<br><br>
+
+{% for poc in pocs %}
+    <article class="card">
+        <div class="card-body">
+            <p class="t-right"><i class="fas fa-heart"></i></p>
+            <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
+            <p>Name : {{ poc.name }}<br>
+            Keywords : {{ poc.keywords }} <br>
+            <strong>Langages</strong> : <br>
+            Categories : <br>
+            Premium : {{ poc.isPremium ? 'Yes' : 'No' }} <br>
+            Price : {{ poc.price }} <br>
+            <a href="{{ path('catalog_show', {'id': poc.id}) }}">Details</a><br>
+            <a href="{{ path('cart_add', {'id': poc.id}) }}">Add to cart</a></p><br>
+            
+            <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-success"><i class="fab fa-github"></i> Github Link</button></a>
+            <a href="{{ poc.liveDemoLink }}" target="_blank"><button class="btn btn-primary"></i>Live demo</button></a>
+            
+        </div>
+    </article>
+{% else %}
+    <p>No records found</p>
+{% endfor %}
+
 {% endblock %}

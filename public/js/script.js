@@ -8,8 +8,13 @@ if (x.style.display === "none") {
 }
 
 //Marche pas
-function click() {
-alert("Hello");
+function myFunction2() {
+    var x = document.getElementById("navprofil");
+    if (x.style.display === "none") {
+        x.style.display = "grid";
+    } else {
+        x.style.display = "none";
+    }
 }
 
 const heart = document.querySelector('.fa-heart');

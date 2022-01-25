@@ -20,9 +20,10 @@ background-color: lightgreen;
 padding: 1%;
 }
 
-#navtoggle{
+#navtoggle, #navprofil{
 display: none;
 }
+
 
 /* Images */
 img{
