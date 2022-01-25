@@ -8,7 +8,7 @@ text-align: right;
 }
 
 /* Nav bar */
-nav div{
+nav #navstable{
 background-color: lightblue;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
@@ -22,7 +22,6 @@ padding: 1%;
 
 #navtoggle{
 display: none;
-background-color: darksalmon;
 }
 
 /* Images */

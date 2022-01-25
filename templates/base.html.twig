@@ -21,7 +21,12 @@
         {% endblock %}
     </head>
     <body>
-        {{include("navbar.html.twig")}}
+        <header>
+            {{include("navbar.html.twig")}}
+            {{include("burgernav.html.twig")}}
+            {{include("profil.html.twig")}}
+        </header>
+        
 
         <div class="container">
             {% block body %}{% endblock %}

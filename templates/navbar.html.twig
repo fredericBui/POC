@@ -1,25 +1,7 @@
-<header>
-    <nav>
-        <div id="navstable">
-            <i class="fas fa-bars" onclick="myFunction()" ></i>
-            <a href={{path("home")}}><p class="t-center">POC - Piece of code</p></a>
-            <a href={{path("app_login")}} class="t-right"><i class="fas fa-user" ></i></a>
-        </div>
-        <div id="navtoggle">
-            <a href={{path("catalog_index")}}><p class="t-center">Search by Tag</p></a>
-            <a href={{path("catalog_index")}}><p class="t-center">Search by Langage</p></a>
-            <a href={{path("catalog_index")}}><p class="t-center">Search by Category</p></a>
-            <a href={{path("cart_index")}}><p class="t-center">Cart</p></a>
-        </div>
-        {% if is_granted('ROLE_ADMIN') %}
-        <div id="navadmin">
-            <a href={{path("admin_category_index")}}><p class="t-center">Admin Category</p></a>
-            <a href={{path("admin_language_index")}}><p class="t-center">Admin Language</p></a>
-            <a href={{path("admin_poc_index")}}><p class="t-center">Admin POC</p></a>
-            <a href={{path("admin_user_index")}}><p class="t-center">Admin User</p></a>
-            <a href={{path("admin_payment_index")}}><p class="t-center">Admin Payment</p></a>
-            <a href={{path("admin_purchase_index")}}><p class="t-center">Admin Purchase</p></a>
-        </div>
-        {% endif %}
-    </nav>
-</header>
+<nav>
+    <div id="navstable">
+        <i class="fas fa-bars" onclick="myFunction()" ></i>
+        <a href={{path("home")}}><p class="t-center">POC - Piece of code</p></a>
+        <a href={{path("app_login")}} class="t-right"><i class="fas fa-user" ></i></a>
+    </div>
+</nav>
