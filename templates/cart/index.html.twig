@@ -6,10 +6,6 @@
 
 {% if cart.elements %}
 
-<div>
-    Total du panier : {{cart.total}}
-</div>
-
 <table>
     <tr>
         <th>Name</th>
@@ -29,6 +25,11 @@
 
 </table>
 
+<div>
+    Total of the shopping cart : {{cart.total}}
+</div>
+
+<a href="{{ path('payment_index') }}"><button class="btn btn-success">Pay</button></a>
 <a href="{{ path('cart_clear') }}">Clear cart</a>
 
 {% endif %}

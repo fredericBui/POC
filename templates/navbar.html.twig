@@ -2,7 +2,10 @@
     <div id="navstable">
         <i class="fas fa-bars" onclick="displayNoneMenu()"></i>
         <a href={{path("home")}}><p class="t-center">POC - Piece of code</p></a>
-         <i class="fas fa-user t-right" onclick="displayNoneProfil()"></i>
+        <div class="t-right">
+            <a href={{path("cart_index")}}><i class="fas fa-shopping-cart"></i></a>
+            <i class="fas fa-user" onclick="displayNoneProfil()"></i>
+        </div>
     </div>
 </nav>
 {% if app.user %}<p class="t-right">Hi {{app.user.username}}</p>{% endif %}
