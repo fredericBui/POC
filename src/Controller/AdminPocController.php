@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Poc;
-use App\Entity\User;
 use App\Form\PocType;
 use App\Repository\PocRepository;
 use App\Service\FileUploader;
