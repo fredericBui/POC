@@ -51,5 +51,8 @@ footer{
 background-color: lightblue;
 padding: 1%;
 }
-  
+
+.displayGrid{
+    display: grid;
+}
   

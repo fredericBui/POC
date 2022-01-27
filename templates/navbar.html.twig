@@ -1,7 +1,8 @@
 <nav>
     <div id="navstable">
-        <i class="fas fa-bars" onclick="myFunction()"></i>
+        <i class="fas fa-bars" onclick="displayNoneMenu()"></i>
         <a href={{path("home")}}><p class="t-center">POC - Piece of code</p></a>
-        <p class="t-right">{% if app.user %}Hi {{app.user.username}}{% endif %} <i class="fas fa-user" onclick="myFunction2()"></i></p>
+         <i class="fas fa-user t-right" onclick="displayNoneProfil()"></i>
     </div>
 </nav>
+{% if app.user %}<p class="t-right">Hi {{app.user.username}}</p>{% endif %}

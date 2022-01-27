@@ -1,14 +1,13 @@
-function myFunction() {
-var x = document.getElementById("navtoggle");
-if (x.style.display === "none") {
-    x.style.display = "grid";
-} else {
-    x.style.display = "none";
-}
+function displayNoneMenu(){
+    var x = document.getElementById("navtoggle");
+    if (x.style.display === "none") {
+        x.style.display = "grid";
+    } else {
+        x.style.display = "none";
+    }
 }
 
-//Marche pas
-function myFunction2() {
+function displayNoneProfil(){
     var x = document.getElementById("navprofil");
     if (x.style.display === "none") {
         x.style.display = "grid";
@@ -17,12 +16,10 @@ function myFunction2() {
     }
 }
 
-const heart = document.querySelector('.fa-heart');
-
-heart.addEventListener('click', event => {
-if (heart.style.color === "lightgray") {
-    heart.style.color = "red";
-} else {
-    heart.style.color = "lightgray";
+function turnRed(e) {
+    if (e.style.color === "lightgray") {
+        e.style.color = "red";
+    } else {
+        e.style.color = "lightgray";
+    }
 }
-});
