@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Poc;
+use App\Entity\User;
 use App\Form\PocType;
 use App\Repository\PocRepository;
 use App\Service\FileUploader;
@@ -10,6 +11,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -30,11 +32,12 @@ class AdminPocController extends AbstractController
     /**
      * @Route("/new", name="admin_poc_new", methods={"GET", "POST"})
      */
-    public function new(Request $request,FileUploader $fileUploader, EntityManagerInterface $entityManager): Response
+    public function new(Request $request,FileUploader $fileUploader, EntityManagerInterface $entityManager, SessionInterface $sessionInterface): Response
     {
         $poc = new Poc();
         $form = $this->createForm(PocType::class, $poc);
         $form->handleRequest($request);
+        $poc->setAuthor($sessionInterface->get('user'));
 
         if ($form->isSubmitted() && $form->isValid()) {
             

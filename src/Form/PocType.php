@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Poc;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -21,7 +22,7 @@ class PocType extends AbstractType
             ->add('githubLink')
             ->add('liveDemoLink')
             ->add('keywords')
-            ->add('author')
+            ->add('author', HiddenType::class)
             ->add('languages')
             ->add('categories')
             ->add('isPremium')

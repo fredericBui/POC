@@ -5,7 +5,9 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -15,8 +17,9 @@ class SecurityController extends AbstractController
      * @Route("/login", name="app_login")
      */
     // Ici on utilise une class spécial pour la connexion celle ci utilise par exemple la class request pour récupérer des données
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    public function login(AuthenticationUtils $authenticationUtils, SessionInterface $sessionInterface): Response
     {
+        
         // if ($this->getUser()) {
         //     return $this->redirectToRoute('target_path');
         // }
@@ -25,6 +28,7 @@ class SecurityController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user, est-ce que c'est à cause de cette méthode que lorsque je reviens sur un formulaire, je vois l'ancien identifiant que j'ai entré ?
         $lastUsername = $authenticationUtils->getLastUsername();
+        
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }

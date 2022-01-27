@@ -41,7 +41,7 @@ class ProfilController extends AbstractController
         $user = $this->getUser();
 
         // Ici on fais appelle à un form spécial pour l'utilisateur
-        // Je viens de comprendre que le deuxième paramètre de createForm permet de remplir les values du form avec ce que contient user
+        // Le deuxième paramètre de createForm permet de remplir les values du form avec ce que contient user
         $form = $this->createForm(User1Type::class, $user);
         $form->handleRequest($request);
 

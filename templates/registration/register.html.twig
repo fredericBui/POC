@@ -12,7 +12,8 @@
             label: 'Password'
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
-
+        <a href={{path("cguCgv")}}>General use and purchase conditions</a><br>
         <button type="submit" class="btn btn-primary">Register</button>
+        
     {{ form_end(registrationForm) }}
 {% endblock %}

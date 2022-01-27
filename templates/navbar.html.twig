@@ -2,6 +2,6 @@
     <div id="navstable">
         <i class="fas fa-bars" onclick="myFunction()"></i>
         <a href={{path("home")}}><p class="t-center">POC - Piece of code</p></a>
-        <i class="fas fa-user t-right" onclick="myFunction2()"></i>
+        <p class="t-right">{% if app.user %}Hi {{app.user.username}}{% endif %} <i class="fas fa-user" onclick="myFunction2()"></i></p>
     </div>
 </nav>
