@@ -2,7 +2,7 @@
 
     {% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN') == false %}
     <div >
-        <a href="#"><p class="t-center">My POC</p></a>
+        <a href={{ path('profil_myPoc') }}><p class="t-center">My POC</p></a>
         <a href={{ path('app_logout') }}><p class="t-center">Log out</p></a>
         <a href="#"><p class="t-center">Dark Mode</p></a>
     </div>

@@ -7,12 +7,14 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\User1Type;
+use App\Repository\PocRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @Route("/profil")
@@ -55,6 +57,18 @@ class ProfilController extends AbstractController
             'user' => $user,
             'form' => $form,
         ]);
+    }
+
+    /**
+     * @Route("/myPoc", name="profil_myPoc", methods={"GET"})
+     */
+    public function myPoc(PocRepository $pocRepository): Response
+    {
+        //$user = $this->getUser(); J'ai essayé get user mais je ne peux pas récupérer un id privé
+        return $this->render('profil/myPoc.html.twig', [
+            'pocs' => $pocRepository->findBy(
+                ['author' => '1'] // Ici j'aimerais bien mettre l'id de l'utilisateur actuel
+        )]);
     }
 
 }
