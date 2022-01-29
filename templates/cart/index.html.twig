@@ -18,8 +18,8 @@
     <tr>
         <td>{{element.poc.name }}</td>
         <td>{{element.quantity }}</td>
-        <td>{{element.poc.price }}</td>
-        <td><a href="{{ path('cart_remove', {'id': element.poc.id}) }}">Remove one</a></td>
+        <td>{{element.poc.price }}€</td>
+        <td><a href="{{ path('cart_remove', {'id': element.poc.id}) }}"><button class="btn btn-danger">Remove one</button></a></td>
     </tr>
 {% endfor %}
 
@@ -30,7 +30,10 @@
 </div>
 
 <a href="{{ path('payment_index') }}"><button class="btn btn-success">Pay</button></a>
-<a href="{{ path('cart_clear') }}">Clear cart</a>
+<a href="{{ path('cart_clear') }}"><button class="btn btn-danger">Clear cart</button></a>
+
+{% else %}
+Cart empty
 
 {% endif %}
 
