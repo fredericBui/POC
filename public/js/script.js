@@ -23,3 +23,8 @@ function turnRed(e) {
         e.style.color = "lightgray";
     }
 }
+
+function darkMode(){
+    var x = document.getElementById("navstable");
+    x.classList.toggle("darkNav");
+}

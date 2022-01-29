@@ -1,3 +1,37 @@
+/* All my colors */
+
+/* Light mode */
+
+.lightNav{
+    background-color: lightblue;
+    color: black;
+}
+
+/*nav #navstable, footer{
+    background-color: lightblue;
+    color: black;
+}*/
+
+nav #navstable a{
+    color: black;
+}
+
+nav #navadmin{
+    background-color: lightgreen;
+    border: black 1px solid;
+}
+
+#navtoggle, #navprofil{
+    border: black 1px solid;
+}
+
+/* Dark mode */
+
+.darkNav{
+    background-color: grey;
+    color: black;
+}
+
 body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -13,26 +47,18 @@ text-align: right;
 
 /* Nav bar */
 nav #navstable{
-background-color: lightblue;
-color: black;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 padding: 1%;
 }
 
-nav #navstable a{
-    color: black;
-}
 
 nav #navadmin{
-background-color: lightgreen;
 padding: 1%;
-border: black 1px solid;
 }
 
 #navtoggle, #navprofil{
 display: none;
-border: black 1px solid;
 }
 
 
@@ -59,7 +85,6 @@ color:lightgray;
 
 /* Footer */
 footer{
-background-color: lightblue;
 padding: 1%;
 }
 

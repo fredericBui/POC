@@ -1,13 +1,10 @@
 <nav id="navprofil">
 
+    <div>
     {% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN') == false %}
-    <div >
         <a href={{ path('profil_myPoc') }}><p class="t-center">My POC</p></a>
         <a href={{ path('app_logout') }}><p class="t-center">Log out</p></a>
-        <a href="#"><p class="t-center">Dark Mode</p></a>
-    </div>
     {% elseif is_granted('ROLE_ADMIN') %}
-    <div>
         <p class="t-center">Administration interface</p>
         <hr>
         <a href={{path("admin_poc_index")}}><p class="t-center">POC</p></a>
@@ -18,14 +15,11 @@
         <a href={{path("admin_payment_index")}}><p class="t-center">Payment</p></a>
         <hr>
         <a href={{ path('app_logout') }}><p class="t-center">Log out</p></a>
-        <a href="#"><p class="t-center">Dark Mode</p></a>
-    </div>
     {% else %}
-    <div>
         <a href={{path("app_login")}}><p class="t-center">Login</p></a>
         <a href={{path("app_register")}}><p class="t-center">Register</p></a>
-        <a href="#"><p class="t-center">Dark Mode</p></a>
-    </div>
     {% endif %}
+        <p class="t-center" onclick="darkMode()">Dark Mode</p>
+    </div>
 
 </nav>
