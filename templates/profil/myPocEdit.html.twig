@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Poc{% endblock %}
+
+{% block body %}
+    <h1>Edit Poc</h1>
+
+    {{ include('profil/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('profil_myPoc') }}">back to list</a>
+
+{% endblock %}

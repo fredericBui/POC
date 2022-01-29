@@ -11,8 +11,6 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>ImageFilename</th>
-                <th>GithubLink</th>
-                <th>LiveDemoLink</th>
                 <th>Keywords</th>
                 <th>Premium (1=yes)</th>
                 <th>Price</th>
@@ -27,14 +25,12 @@
                 <td>
                     <img src= "{{ asset('uploads/' ~ poc.imageFilename ) }}"/>
                 </td>
-                <td>{{ poc.githubLink }}</td>
-                <td>{{ poc.liveDemoLink }}</td>
                 <td>{{ poc.keywords }}</td>
                 <td>{{ poc.isPremium }}</td>
                 <td>{{ poc.price }}</td>
                 <td>
-                    <a href="#">show</a>
-                    <a href="#">edit</a>
+                    <a href="{{path('profil_myPoc_show', {'id': poc.id}) }}">show</a>
+                    <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -45,6 +41,6 @@
         </tbody>
     </table>
 
-    <a href="#">Create new</a>
+    <a href={{path("profil_addPoc")}}>Create new</a>
 
 {% endblock %}

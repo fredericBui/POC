@@ -5,8 +5,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Poc;
+use App\Form\PocType;
 use App\Form\User1Type;
 use App\Repository\PocRepository;
+use App\Service\FileUploader;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -57,15 +60,83 @@ class ProfilController extends AbstractController
     }
 
     /**
+     * @Route("/addPoc", name="profil_addPoc", methods={"GET", "POST"})
+     */
+    public function addPoc(PocRepository $pocRepository, EntityManagerInterface $entityManager, Request $request, FileUploader $fileUploader): Response
+    {
+
+        $poc = new Poc();
+        $form = $this->createForm(PocType::class, $poc);
+        $form->handleRequest($request);
+        // Ici on force notre nouveau poc à avoir l'adresse mail de l'utilisateur actuel
+        $poc->setAuthor($this->getUser());
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            
+            $imageFile = $form->get('image')->getData();
+            if ($imageFile) {
+                $imageFileName = $fileUploader->upload($imageFile);
+                $poc->setImageFilename($imageFileName);
+            }
+            
+            $entityManager->persist($poc);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('profil_myPoc', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('admin_poc/new.html.twig', [
+            'poc' => $poc,
+            'form' => $form,
+        ]);
+
+    }
+
+    /**
      * @Route("/myPoc", name="profil_myPoc", methods={"GET"})
      */
     public function myPoc(PocRepository $pocRepository): Response
     {
-        //$user = $this->getUser(); J'ai essayé get user mais je ne peux pas récupérer un id privé
         return $this->render('profil/myPoc.html.twig', [
             'pocs' => $pocRepository->findBy(
-                ['author' => '1'] // Ici j'aimerais bien mettre l'id de l'utilisateur actuel
+                ['author' => $this->getUser()] // Ici j'aimerais bien mettre l'id de l'utilisateur actuel
         )]);
+    }
+
+    /**
+     * @Route("/myPoc/{id}", name="profil_myPoc_show", methods={"GET"})
+     */
+    public function myPocShow(Poc $poc): Response
+    {
+        return $this->render('profil/myPocShow.html.twig', [
+            'poc' => $poc,
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/edit", name="profil_myPoc_edit", methods={"GET", "POST"})
+     */
+    public function myPocedit(Request $request,FileUploader $fileUploader , Poc $poc, EntityManagerInterface $entityManager): Response
+    {
+        $form = $this->createForm(PocType::class, $poc);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $imageFile = $form->get('image')->getData();
+            if ($imageFile) {
+                $imageFileName = $fileUploader->upload($imageFile);
+                $poc->setImageFilename($imageFileName);
+            }
+            
+            $entityManager->flush();
+
+            return $this->redirectToRoute('profil_myPoc', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('profil/myPocEdit.html.twig', [
+            'poc' => $poc,
+            'form' => $form,
+        ]);
     }
 
 }
