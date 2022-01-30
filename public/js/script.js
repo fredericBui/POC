@@ -1,28 +1,34 @@
-function displayNoneMenu(){
-    var x = document.getElementById("navtoggle");
-    if (x.style.display === "none") {
-        x.style.display = "grid";
-    } else {
-        x.style.display = "none";
-    }
+/* Parametric function */
+
+/* 1 - Toggle the actual class of the target element e to the switch class */
+function toggleTarget(e, actualClass, switchClass){
+    var x = document.getElementById(e);
+    x.classList.toggle(actualClass);
+    x.classList.toggle(switchClass);
 }
 
-function displayNoneProfil(){
-    var x = document.getElementById("navprofil");
-    if (x.style.display === "none") {
-        x.style.display = "grid";
-    } else {
-        x.style.display = "none";
-    }
+/* 2 - Toggle the actual class of the this element to the switch class */
+function toggleThis(e, actualClass, switchClass){
+    e.classList.toggle(actualClass);
+    e.classList.toggle(switchClass);
 }
 
-function turnRed(e) {
-    if (e.style.color === "lightgray") {
-        e.style.color = "red";
-    } else {
-        e.style.color = "lightgray";
-    }
+/* 3 - Toggle the actual class of 2 target element (e1 & e2) to the switch class */
+function dualToggleTarget(e1,e2,actualClass, switchClass){
+    var x = document.getElementById(e1);
+    var y = document.getElementById(e2);
+    x.classList.toggle(actualClass);
+    y.classList.toggle(actualClass);
+    x.classList.toggle(switchClass);
+    y.classList.toggle(switchClass);
 }
+
+// Comment faire pour faire un grand changement de class
+function toggleClass(actualClass){
+
+}
+
+/* Dark mode */
 
 function darkMode(){
     var x = document.getElementById("navstable");

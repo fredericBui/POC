@@ -26,7 +26,7 @@
     {% for poc in pocs %}
         <article class="card">
             <div class="card-body">
-                <p class="t-right"><i class="fas fa-heart"></i></p>
+                <p class="t-right"><i class="fas fa-heart" onclick="toggleThis(this, 'switchOn')"></i></p>
                 <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
                 <p>Name : {{ poc.name }}<br>
                 Price : {{ poc.price }} <br>

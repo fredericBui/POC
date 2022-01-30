@@ -1,4 +1,4 @@
-<nav id="navprofil">
+<nav id="navprofil" class="darkSubNav displayNone">
 
     <div>
     {% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN') == false %}
@@ -20,7 +20,7 @@
         <a href={{path("app_login")}}><p class="t-center">Login</p></a>
         <a href={{path("app_register")}}><p class="t-center">Register</p></a>
     {% endif %}
-        <p class="t-center" onclick="darkMode()">Dark Mode</p>
+        <p class="t-center" onclick="dualToggleTarget('navstable', 'footer', 'lightNav', 'darkNav')">Dark Mode</p>
     </div>
 
 </nav>

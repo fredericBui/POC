@@ -1,98 +1,91 @@
-/* All my colors */
+/* All my colors : */
 
-/* Light mode */
+    /* 0 - Tags */
 
-.lightNav{
-    background-color: lightblue;
-    color: black;
-}
+    a{
+        color:black;
+    }
 
-/*nav #navstable, footer{
-    background-color: lightblue;
-    color: black;
-}*/
+    .fa-heart{
+        color:lightgray;
+    }
 
-nav #navstable a{
-    color: black;
-}
+    .switchOn{
+        color:red;
+    }
 
-nav #navadmin{
-    background-color: lightgreen;
-    border: black 1px solid;
-}
+    /* 1 - Light mode */
 
-#navtoggle, #navprofil{
-    border: black 1px solid;
-}
+    .lightNav{
+        background-color: lightblue;
+    }
 
-/* Dark mode */
+    .lightSubNav{
+        background-color: rgb(52, 96, 110);
+    }
 
-.darkNav{
-    background-color: grey;
-    color: black;
-}
+    /* 2 - Dark mode */
 
-body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    .darkNav{
+        background-color: grey;
+    }
 
-/* My class */
-.t-center {
-    text-align: center;
-}
+    .darkSubNav{
+        background-color: rgb(78, 78, 78);
+    }
 
-.t-right {
-text-align: right;
-}
+/* All my font : */
 
-/* Nav bar */
-nav #navstable{
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-padding: 1%;
-}
+    /* 0 - Tags */
 
+    body{
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-nav #navadmin{
-padding: 1%;
-}
+    a{
+        font-weight:500;
+    }
 
-#navtoggle, #navprofil{
-display: none;
-}
+    /* 1 - Reusable class for alignement */
+
+    .t-center {
+        text-align: center;
+    }
+
+    .t-right {
+        text-align: right;
+    }
+
+/* Structures : */
+
+    .displayNone{
+        display: none;
+    }
+
+    .displayGrid{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .grid3{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 1%;
+    }
 
 
 /* Images */
 img{
-width: 100%;
-padding: 5px;
-border-radius: 10px;
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
 }
 
 @media (min-width: 600px) { 
-#POC{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    #POC{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
-}
-
-/*Card*/
-
-.fa-heart{
-color:lightgray;
-}
-
-/* Footer */
-footer{
-padding: 1%;
-text-align: center;
-display: grid;
-grid-template-columns: 1fr;
-
-}
-
-.displayGrid{
-    display: grid;
-}
   
