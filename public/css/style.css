@@ -86,6 +86,10 @@ color:lightgray;
 /* Footer */
 footer{
 padding: 1%;
+text-align: center;
+display: grid;
+grid-template-columns: 1fr;
+
 }
 
 .displayGrid{
