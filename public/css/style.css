@@ -24,6 +24,10 @@
         background-color: rgb(52, 96, 110);
     }
 
+    .ligthBody{
+
+    }
+
     /* 2 - Dark mode */
 
     .darkNav{
@@ -32,6 +36,10 @@
 
     .darkSubNav{
         background-color: rgb(78, 78, 78);
+    }
+
+    .darkBody{
+        
     }
 
 /* All my font : */
@@ -73,19 +81,26 @@
         padding: 1%;
     }
 
-
-/* Images */
-img{
-    width: 100%;
-    padding: 5px;
-    border-radius: 10px;
-}
-
-@media (min-width: 600px) { 
-    #POC{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+    img{
+        width: 100%;
+        padding: 5px;
+        border-radius: 10px;
     }
-}
 
-  
+/* Responsive */
+
+    /* Mobile */
+    
+    @media (min-width: 700px) { 
+        #pocList{
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+        }
+    }
+
+    @media (min-width: 1000px) { 
+        #pocList{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }

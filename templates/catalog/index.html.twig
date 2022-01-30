@@ -23,6 +23,7 @@
     <button>&ltfooter&gt</button>
     <button>&ltaside&gt</button>
 
+    <section id="pocList">
     {% for poc in pocs %}
         <article class="card">
             <div class="card-body">
@@ -41,6 +42,7 @@
     {% else %}
         <p>No records found</p>
     {% endfor %}
+    </section>
 
 
 {% endblock %}
