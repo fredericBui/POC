@@ -1,6 +1,0 @@
-Entités pour controller :
-
-Home : Pas d'entité
-POC : POC
-Registration : User
-Security : User

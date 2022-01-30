@@ -42,8 +42,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('profil_myPoc') }}">back to list</a>
+    <a href="{{ path('profil_myPoc') }}"><button class="btn btn-primary">back to my POC</button></a>
 
-    <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}">edit</a>
+    <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}"><button class="btn btn-success">Edit</button></a>
+
+    {{ include('profil/_delete_form.html.twig') }}
+
 
 {% endblock %}

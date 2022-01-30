@@ -12,10 +12,7 @@
                 <th>Name</th>
                 <th>ImageFilename</th>
                 <th>GithubLink</th>
-                <th>LiveDemoLink</th>
-                <th>Keywords</th>
-                <th>Premium (1=yes)</th>
-                <th>Price</th>
+                <th>Author</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -28,10 +25,7 @@
                     <img src= "{{ asset('uploads/' ~ poc.imageFilename ) }}"/>
                 </td>
                 <td>{{ poc.githubLink }}</td>
-                <td>{{ poc.liveDemoLink }}</td>
-                <td>{{ poc.keywords }}</td>
-                <td>{{ poc.isPremium }}</td>
-                <td>{{ poc.price }}</td>
+                <td>{{ poc.Author }}</td>
                 <td>
                     <a href="{{ path('admin_poc_show', {'id': poc.id}) }}">show</a>
                     <a href="{{ path('admin_poc_edit', {'id': poc.id}) }}">edit</a>

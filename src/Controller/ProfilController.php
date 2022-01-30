@@ -114,7 +114,7 @@ class ProfilController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="profil_myPoc_edit", methods={"GET", "POST"})
+     * @Route("myPoc/{id}/edit", name="profil_myPoc_edit", methods={"GET", "POST"})
      */
     public function myPocedit(Request $request,FileUploader $fileUploader , Poc $poc, EntityManagerInterface $entityManager): Response
     {
@@ -137,6 +137,19 @@ class ProfilController extends AbstractController
             'poc' => $poc,
             'form' => $form,
         ]);
+    }
+
+    /**
+     * @Route("myPoc/{id}", name="admin_poc_delete", methods={"POST"})
+     */
+    public function delete(Request $request, Poc $poc, EntityManagerInterface $entityManager): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$poc->getId(), $request->request->get('_token'))) {
+            $entityManager->remove($poc);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('admin_poc_index', [], Response::HTTP_SEE_OTHER);
     }
 
 }
