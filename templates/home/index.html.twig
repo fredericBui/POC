@@ -46,10 +46,6 @@
             <p class="t-right"><i class="fas fa-heart" onclick="turnRed(this)"></i></p>
             <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
             <p>Name : {{ poc.name }}<br>
-            Keywords : {{ poc.keywords }} <br>
-            <strong>Langages</strong> : <br>
-            Categories : <br>
-            Premium : {{ poc.isPremium ? 'Yes' : 'No' }} <br>
             Price : {{ poc.price }} <br>
             <a href="{{ path('catalog_show', {'id': poc.id}) }}">Details</a><br>
             <a href="{{ path('cart_add', {'id': poc.id}) }}">Add to cart</a></p><br>

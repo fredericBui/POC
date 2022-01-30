@@ -2,6 +2,7 @@
 
     <div>
     {% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN') == false %}
+    <a href={{ path('profil_show') }}><p class="t-center">My profil</p></a>
         <a href={{ path('profil_myPoc') }}><p class="t-center">My POC</p></a>
         <a href={{ path('app_logout') }}><p class="t-center">Log out</p></a>
     {% elseif is_granted('ROLE_ADMIN') %}

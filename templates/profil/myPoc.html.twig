@@ -29,8 +29,8 @@
                 <td>{{ poc.isPremium }}</td>
                 <td>{{ poc.price }}</td>
                 <td>
-                    <a href="{{path('profil_myPoc_show', {'id': poc.id}) }}">show</a>
-                    <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}">edit</a>
+                    <a href="{{path('profil_myPoc_show', {'id': poc.id}) }}"><button class="btn btn-primary">Show</button></a>
+                    <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}"><button class="btn btn-primary">Edit</button></a>
                 </td>
             </tr>
         {% else %}
@@ -41,6 +41,6 @@
         </tbody>
     </table>
 
-    <a href={{path("profil_addPoc")}}>Create new</a>
+    <a href={{path("profil_addPoc")}}><button class="btn btn-success">Create new</button></a>
 
 {% endblock %}

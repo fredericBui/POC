@@ -26,5 +26,11 @@ function turnRed(e) {
 
 function darkMode(){
     var x = document.getElementById("navstable");
+    var y = document.getElementById("footer");
+    x.classList.toggle("lightNav");
+    y.classList.toggle("lightNav");
     x.classList.toggle("darkNav");
+    y.classList.toggle("darkNav");
+    // ligne ci-dessous à modifier
+    document.body.style.backgroundColor="grey";
 }
