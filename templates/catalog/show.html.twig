@@ -14,11 +14,16 @@
             Keywords : {{ poc.keywords }} <br>
             <strong>Langages</strong> : <br>
             Categories : <br>
+            {% if poc.isPremium %}
             Premium : {{ poc.isPremium ? 'Yes' : 'No' }} <br>
             Price : {{ poc.price }} <br>
+            <a href="{{ path('cart_add', {'id': poc.id}) }}"><button class="btn btn-success">Add to cart</button></a><br>
+            {% endif %}
             </p>
             
+            {% if poc.isPremium == false %}
             <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-success"><i class="fab fa-github"></i> Github Link</button></a>
+            {% endif %}
             <a href="{{ poc.liveDemoLink }}" target="_blank"><button class="btn btn-primary"></i>Live demo</button></a>
         </div>
     </article>

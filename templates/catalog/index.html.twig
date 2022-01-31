@@ -30,14 +30,19 @@
                 <p class="t-right"><i class="fas fa-heart" onclick="toggleThis(this, 'switchOn')"></i></p>
                 <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
                 <p>Name : {{ poc.name }}<br>
-                Price : {{ poc.price }} <br>
                 Author : {{ poc.Author }} <br>
-                <a href="{{ path('catalog_show', {'id': poc.id}) }}">Details</a><br>
-                <a href="{{ path('cart_add', {'id': poc.id}) }}">Add to cart</a></p><br>
-                
+
+                {% if poc.isPremium %}
+                Price : {{ poc.price }} <br>
+                <a href="{{ path('cart_add', {'id': poc.id}) }}"><button class="btn btn-success">Add to cart</button></a><br>
+                {% endif %}
+                <a href="{{ path('catalog_show', {'id': poc.id}) }}">Details</a></p><br>
+
+                {% if poc.isPremium == false %}
                 <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-success"><i class="fab fa-github"></i> Github Link</button></a>
+                {% endif %}
                 <a href="{{ poc.liveDemoLink }}" target="_blank"><button class="btn btn-primary"></i>Live demo</button></a>
-                
+    
             </div>
         </article>
     {% else %}
