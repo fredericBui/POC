@@ -98,8 +98,9 @@ class ProfilController extends AbstractController
     public function myPoc(PocRepository $pocRepository): Response
     {
         return $this->render('profil/myPoc.html.twig', [
+            // Sélectionne uniquement les poc de l'utilisateur connecté
             'pocs' => $pocRepository->findBy(
-                ['author' => $this->getUser()] // Ici j'aimerais bien mettre l'id de l'utilisateur actuel
+                ['author' => $this->getUser()]
         )]);
     }
 
@@ -108,9 +109,15 @@ class ProfilController extends AbstractController
      */
     public function myPocShow(Poc $poc): Response
     {
-        return $this->render('profil/myPocShow.html.twig', [
-            'poc' => $poc,
-        ]);
+        //Si la personne connectée ne correspond pas à l'auteur du poc il est redirigé
+        if($poc->getAuthor() == $this->getUser()){
+            return $this->render('profil/myPocShow.html.twig', [
+                'poc' => $poc,
+            ]);
+        }else{
+            return $this->redirectToRoute('profil_myPoc', [], Response::HTTP_SEE_OTHER);
+        }
+        
     }
 
     /**
@@ -118,38 +125,46 @@ class ProfilController extends AbstractController
      */
     public function myPocedit(Request $request,FileUploader $fileUploader , Poc $poc, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(PocType::class, $poc);
-        $form->handleRequest($request);
+        if($poc->getAuthor() == $this->getUser()){
+            $form = $this->createForm(PocType::class, $poc);
+            $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $imageFile = $form->get('image')->getData();
-            if ($imageFile) {
-                $imageFileName = $fileUploader->upload($imageFile);
-                $poc->setImageFilename($imageFileName);
+            if ($form->isSubmitted() && $form->isValid()) {
+                $imageFile = $form->get('image')->getData();
+                if ($imageFile) {
+                    $imageFileName = $fileUploader->upload($imageFile);
+                    $poc->setImageFilename($imageFileName);
+                }
+                
+                $entityManager->flush();
+
+                return $this->redirectToRoute('profil_myPoc', [], Response::HTTP_SEE_OTHER);
             }
-            
-            $entityManager->flush();
 
+            return $this->renderForm('profil/myPocEdit.html.twig', [
+                'poc' => $poc,
+                'form' => $form,
+            ]);
+        }else{
             return $this->redirectToRoute('profil_myPoc', [], Response::HTTP_SEE_OTHER);
         }
-
-        return $this->renderForm('profil/myPocEdit.html.twig', [
-            'poc' => $poc,
-            'form' => $form,
-        ]);
     }
 
     /**
-     * @Route("myPoc/{id}", name="admin_poc_delete", methods={"POST"})
+     * @Route("myPoc/{id}", name="profil_poc_delete", methods={"POST"})
      */
     public function delete(Request $request, Poc $poc, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$poc->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($poc);
-            $entityManager->flush();
-        }
+        if($poc->getAuthor() == $this->getUser()){
+            if ($this->isCsrfTokenValid('delete'.$poc->getId(), $request->request->get('_token'))) {
+                $entityManager->remove($poc);
+                $entityManager->flush();
+            }
 
-        return $this->redirectToRoute('admin_poc_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('profil_myPoc', [], Response::HTTP_SEE_OTHER);
+        }else{
+            return $this->redirectToRoute('profil_myPoc', [], Response::HTTP_SEE_OTHER);
+        }
     }
 
 }
