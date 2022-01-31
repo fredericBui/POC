@@ -31,6 +31,7 @@
                 <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
                 <p>Name : {{ poc.name }}<br>
                 Price : {{ poc.price }} <br>
+                Author : {{ poc.Author }} <br>
                 <a href="{{ path('catalog_show', {'id': poc.id}) }}">Details</a><br>
                 <a href="{{ path('cart_add', {'id': poc.id}) }}">Add to cart</a></p><br>
                 

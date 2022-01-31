@@ -24,10 +24,6 @@
         background-color: rgb(52, 96, 110);
     }
 
-    .ligthBody{
-
-    }
-
     /* 2 - Dark mode */
 
     .darkNav{
@@ -39,7 +35,7 @@
     }
 
     .darkBody{
-        
+        background-color: red;
     }
 
 /* All my font : */
