@@ -5,23 +5,14 @@
 {% block body %}
     <h1 class="t-center">POC (Piece of code)</h1>
 
-    <button>e-commerce</button>
-    <button>Landingpage</button>
-    <button>Social Network</button>
-    <button>Blog</button>
-    <button>HTML</button>
-    <button>CSS</button>
-    <button>JS</button>
-    <button>Bootstrap</button>
-    <button>React</button>
-    <button>Symfony</button>
-    <button>&ltform&gt</button>
-    <button>&ltnav&gt</button>
-    <button>&ltdiv&gt</button>
-    <button>&ltheader&gt</button>
-    <button>&ltmain&gt</button>
-    <button>&ltfooter&gt</button>
-    <button>&ltaside&gt</button>
+    <form method="get" action="{{ path('catalog_search') }}">
+        <input type="text" placeholder="Search by keywords" name="keyword"/>
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+
+    <br>
+
+    <a href="{{ path('catalog_index') }}"><button class="btn btn-success" >See all POC</button></a>
 
     <section id="pocList">
     {% for poc in pocs %}
