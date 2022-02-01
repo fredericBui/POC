@@ -1,7 +1,7 @@
 <?php
 // Ce fichier permet de faire des cruds sur les category
 
-// Indique l'emplacement du fichier ?
+// Répertoire virtuel du fichier
 namespace App\Controller;
 
 // Importe tous les fichiers nécessaires par leur namespace et nom de class

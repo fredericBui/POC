@@ -45,9 +45,7 @@ class CatalogController extends AbstractController
         //dd($data);
         return $this->render('catalog/index.html.twig', [
             //Recherche par mot clé
-            'pocs' => $pocRepository->findBy(
-                ['keywords' => $data]
-        )]);
+            'pocs' => $pocRepository->findByText($data)]);
     }
 
 }

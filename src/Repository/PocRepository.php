@@ -19,6 +19,17 @@ class PocRepository extends ServiceEntityRepository
         parent::__construct($registry, Poc::class);
     }
 
+    // TODO: A voir
+    public function findByText(string $term)
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.keywords LIKE :searchTerm')
+            ->setParameter('searchTerm', '%'.$term.'%')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Poc[] Returns an array of Poc objects
     //  */

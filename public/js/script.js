@@ -44,5 +44,7 @@ function darkMode(){
     o.classList.toggle("lightSubNav");
     o.classList.toggle("darkSubNav");
     // ligne ci-dessous à modifier
+    document.body.classList.toggle("lightBody");
     document.body.classList.toggle("darkBody");
+    document.p.style.color = "#545454";
 }
