@@ -3,8 +3,8 @@
         <i class="fas fa-bars" onclick="toggleTarget('navtoggle', 'displayNone', 'displayGrid')"></i>
         <a href={{path("home")}}><p class="t-center">POC - Piece of code</p></a>
         <div class="t-right">
-            <a href={{path("cart_index")}}><i class="fas fa-shopping-cart"></i></a>
-            <i class="fas fa-user" onclick="toggleTarget('navprofil', 'diplayNone', 'displayGrid')"></i>
+            <a href={{path("cart_index")}}><i class="fas fa-shopping-cart whiteCircle"></i></a>
+            <i class="fas fa-user whiteCircle" onclick="toggleTarget('navprofil', 'diplayNone', 'displayGrid')"></i>
         </div>
     </div>
     {% if app.user %}<p class="t-right">Hi {{app.user.pseudo }}</p>{% endif %}

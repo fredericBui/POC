@@ -12,9 +12,9 @@
 
 <h2 class="t-center">Free POC (piece of code)</h2>
 
-<form method="get" action="{{ path('catalog_search') }}">
-    <input type="text" placeholder="Search by keywords" name="keyword"/>
-    <button type="submit"><i class="fas fa-search"></i></button>
+<form class="gridSearch" method="get" action="{{ path('catalog_search') }}">
+    <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+    <input class="borderNone" type="text" placeholder=" Search by keywords" name="keyword"/>
 </form>
 <br>
 
@@ -24,7 +24,7 @@
 {% for poc in pocs %}
     <article class="card">
         <div class="card-body">
-            <p class="t-right"><i class="fas fa-heart" onclick="toggleThis(this, 'switchOn')"></i></p>
+            <!--<p class="t-right"><i class="fas fa-heart" onclick="toggleThis(this, 'switchOn')"></i></p>-->
             <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
             <p>Name : {{ poc.name }}<br>
             Author : {{ poc.Author }} <br>

@@ -22,7 +22,7 @@ class PocType extends AbstractType
             ->add('githubLink')
             ->add('liveDemoLink')
             ->add('keywords')
-            ->add('author', HiddenType::class)
+            //->add('author', HiddenType::class)
             ->add('languages')
             ->add('categories')
             ->add('isPremium')

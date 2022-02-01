@@ -36,7 +36,7 @@ class AdminPocController extends AbstractController
         $poc = new Poc();
         $form = $this->createForm(PocType::class, $poc);
         $form->handleRequest($request);
-        $poc->setAuthor($sessionInterface->get('user'));
+        $poc->setAuthor($this->getUser());
 
         if ($form->isSubmitted() && $form->isValid()) {
             
@@ -75,7 +75,8 @@ class AdminPocController extends AbstractController
     {
         $form = $this->createForm(PocType::class, $poc);
         $form->handleRequest($request);
-
+        $poc->setAuthor($poc->getAuthor());
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $imageFile = $form->get('image')->getData();
             if ($imageFile) {
