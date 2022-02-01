@@ -3,16 +3,16 @@
 {% block title %}POC Catalog{% endblock %}
 
 {% block body %}
-    <h1 class="t-center">POC (Piece of code)</h1>
+    <h1 class="t-center">POC catalog</h1>
 
-    <form class="gridSearch" method="get" action="{{ path('catalog_search') }}">
+    <form class="gridSearch m1" method="get" action="{{ path('catalog_search') }}">
         <button class="btn" type="submit"><i class="fas fa-search"></i></button>
         <input class="borderNone" type="text" placeholder="Search by keywords" name="keyword"/>
     </form>
 
     <br>
 
-    <a href="{{ path('catalog_index') }}"><button class="btn btn-success" >See all POC</button></a>
+    <a href="{{ path('catalog_index') }}"><button class="btn btn-success" ><i class="fas fa-book-open"></i> See all POC</button></a>
 
     <section id="pocList">
     {% for poc in pocs %}

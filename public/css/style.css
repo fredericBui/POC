@@ -70,10 +70,19 @@
 
     .gridSearch{
         display: grid;
-        grid-template-columns: 5% 95%;
+        grid-template-columns: 10% 90%;
         padding: 1%;
         background-color: white;
         border-radius: 2em;
+    }
+
+    .gridForm{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .flex{
+        display: flex;
     }
 
     .grid3{
@@ -115,7 +124,6 @@
     .cursorP{
         cursor: pointer;
     }
-    
 
 /* Responsive */
 
@@ -125,6 +133,10 @@
         #pocList{
             display: grid;
             grid-template-columns: 1fr 1fr ;
+        }
+
+        .gridSearch{
+            grid-template-columns: 5% 95%;
         }
     }
 

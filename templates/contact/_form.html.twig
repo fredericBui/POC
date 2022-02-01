@@ -1,4 +1,14 @@
+<article class="card">
 {{ form_start(formulaire) }}
-    {{ form_widget(formulaire) }}
-    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+    <div class="card-body gridForm">
+        {{ form_label(formulaire.email) }}
+        {{ form_widget(formulaire.email) }}
+        {{ form_label(formulaire.object) }}
+        {{ form_widget(formulaire.object) }}
+        {{ form_label(formulaire.message) }}
+        {{ form_widget(formulaire.message) }}
+        <br/>
+        <button class="btn btn-primary"> <i class="fas fa-envelope"></i> {{ button_label|default('Save') }}</button>
+    </div>
 {{ form_end(formulaire) }}
+</article>
