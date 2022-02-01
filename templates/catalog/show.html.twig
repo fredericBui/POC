@@ -3,28 +3,30 @@
 {% block title %}Poc{% endblock %}
 
 {% block body %}
-    <h1>Poc</h1>
+    <h1 class="t-center">{{ poc.name }}</h1>
 
     <article class="card">
         <div class="card-body">
-            <p class="t-right"><i class="fas fa-heart" onclick="toggleThis(this, 'switchOn')"></i></p>
+            <!--<p class="t-right"><i class="fas fa-heart" onclick="toggleThis(this, 'switchOn')"></i></p>-->
             <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
-            <p>Name : {{ poc.name }}<br>
-            Author : {{ poc.Author }} <br>
+            <p>Author : {{ poc.Author }} <br>
             Keywords : {{ poc.keywords }} <br>
-            <strong>Langages</strong> : <br>
+            <strong>Langages : </strong> : <br>
             Categories : <br>
             {% if poc.isPremium %}
             Premium : {{ poc.isPremium ? 'Yes' : 'No' }} <br>
-            Price : {{ poc.price }} <br>
-            <a href="{{ path('cart_add', {'id': poc.id}) }}"><button class="btn btn-success">Add to cart</button></a><br>
+            Price : {{ poc.price }} € <br>
             {% endif %}
             </p>
             
+
+            {% if poc.isPremium %}
+            <a href="{{ path('cart_add', {'id': poc.id}) }}"><button class="btn btn-success"><i class="fas fa-shopping-cart"></i> Add to cart</button></a>
+            {% endif %}
             {% if poc.isPremium == false %}
             <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-success"><i class="fab fa-github"></i> Github Link</button></a>
             {% endif %}
-            <a href="{{ poc.liveDemoLink }}" target="_blank"><button class="btn btn-primary"></i>Live demo</button></a>
+            <a href="{{ poc.liveDemoLink }}" target="_blank"><button class="btn btn-primary"><i class="fas fa-eye"></i> Live demo</button></a>
         </div>
     </article>
 

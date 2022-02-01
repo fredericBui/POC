@@ -1,13 +1,12 @@
 <nav id="navprofil" class="lightSubNav displayNone">
 
     <div>
+    {% if app.user %}<p> Hi {{app.user.pseudo }} !</p>{% endif %}
     {% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN') == false %}
     <a href={{ path('profil_show') }}><p class="t-center">My profil</p></a>
         <a href={{ path('profil_myPoc') }}><p class="t-center">My POC</p></a>
         <a href={{ path('app_logout') }}><p class="t-center">Log out</p></a>
     {% elseif is_granted('ROLE_ADMIN') %}
-        <p class="t-center">Administration interface</p>
-        <hr>
         <a href={{path("admin_poc_index")}}><p class="t-center">POC</p></a>
         <a href={{path("admin_user_index")}}><p class="t-center">User</p></a>
         <a href={{path("admin_language_index")}}><p class="t-center">Language</p></a>

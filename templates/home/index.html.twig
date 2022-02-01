@@ -10,34 +10,33 @@
     Sorry, your browser doesn't support embedded videos.
 </video>
 
-<h2 class="t-center">Free POC (piece of code)</h2>
+<h2 class="t-center">Free & Premium POC (piece of code)</h2>
 
-<form class="gridSearch" method="get" action="{{ path('catalog_search') }}">
+<form class="gridSearch mY1" method="get" action="{{ path('catalog_search') }}">
     <button class="btn" type="submit"><i class="fas fa-search"></i></button>
     <input class="borderNone" type="text" placeholder=" Search by keywords" name="keyword"/>
 </form>
-<br>
-
-<br><br>
 
 <section>
 {% for poc in pocs %}
-    <article class="card">
+    <article class="card mY1">
         <div class="card-body">
             <!--<p class="t-right"><i class="fas fa-heart" onclick="toggleThis(this, 'switchOn')"></i></p>-->
             <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
             <p>Name : {{ poc.name }}<br>
             Author : {{ poc.Author }} <br>
             {% if poc.isPremium %}
-            Price : {{ poc.price }} <br>
-            <a href="{{ path('cart_add', {'id': poc.id}) }}"><button class="btn btn-success">Add to cart</button></a><br>
-            {% endif %}
+            Price : {{ poc.price }} €<br>
+           {% endif %}
             <a href="{{ path('catalog_show', {'id': poc.id}) }}">Details</a></p><br>
 
+            {% if poc.isPremium %}
+            <a href="{{ path('cart_add', {'id': poc.id}) }}"><button class="btn btn-success"><i class="fas fa-shopping-cart"></i> Add to cart</button></a>
+            {% endif %}
             {% if poc.isPremium == false %}
             <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-success"><i class="fab fa-github"></i> Github Link</button></a>
             {% endif %}
-            <a href="{{ poc.liveDemoLink }}" target="_blank"><button class="btn btn-primary"></i>Live demo</button></a>
+            <a href="{{ poc.liveDemoLink }}" target="_blank"><button class="btn btn-primary"><i class="fas fa-eye"></i>Live demo</button></a>
             
         </div>
     </article>

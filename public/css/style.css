@@ -16,9 +16,6 @@
 
     /* 1 - Light mode */
 
-    .lightNav{
-        background-color: lightblue;
-    }
 
     .lightSubNav{
         background-color: rgb(52, 96, 110);
@@ -29,10 +26,6 @@
     }
 
     /* 2 - Dark mode */
-
-    .darkNav{
-        background-color: #262626;
-    }
 
     .darkSubNav{
         background-color: rgb(58, 58, 58);
@@ -100,10 +93,29 @@
     }
 
     .whiteCircle{
-        background-color: white;
+        background-color: rgb(58, 58, 58);
+        color: white;
         border-radius: 2em;
         padding: 0.5em;
     }
+
+    .p05{
+        padding: 0.5em;
+    }
+
+    .mY1{
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .m1{
+        margin: 1em;
+    }
+
+    .cursorP{
+        cursor: pointer;
+    }
+    
 
 /* Responsive */
 

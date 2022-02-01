@@ -31,12 +31,9 @@ function toggleClass(actualClass){
 /* Dark mode */
 
 function darkMode(){
-    var x = document.getElementById("navstable");
     var y = document.getElementById("footer");
     var z = document.getElementById("navtoggle");
     var o = document.getElementById("navprofil");
-    x.classList.toggle("lightNav");
-    x.classList.toggle("darkNav");
     y.classList.toggle("lightNav");
     y.classList.toggle("darkNav");
     z.classList.toggle("lightSubNav");

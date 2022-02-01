@@ -52,6 +52,6 @@ class Category
     // Et que lorsqu'elle est appellé dans un formulaire elle affiche tous ses choix possible
     public function __toString()
     {
-        return $this->name;
+        return strval($this->name);
     }
 }
