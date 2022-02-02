@@ -125,6 +125,10 @@
         cursor: pointer;
     }
 
+    img:hover{
+        opacity: 0.5;
+    }
+
 /* Responsive */
 
     /* Mobile */
@@ -145,4 +149,36 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
         }
+    }
+
+    /*Test*/
+
+    .container2{
+        position: relative;
+        width: 100%;
+    }
+    
+    img{
+    width: 100%;
+    }
+    
+    
+    .text {
+    position: absolute;
+    color: dark;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    }
+    
+    .container2:hover{
+    opacity: 0.8;
+    transition: .5s ease;
+    }
+    
+    .container2:hover .text{
+    opacity: 1;
+    transition: .5s ease;
     }
