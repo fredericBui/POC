@@ -11,8 +11,18 @@
             <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
             <p>Author : {{ poc.Author }} <br>
             Keywords : {{ poc.keywords }} <br>
-            <strong>Langages : </strong> : <br>
-            Categories : <br>
+            <!---->
+            Langages :
+            {% for language in poc.languages %}
+            {{language.name}}
+            {% endfor %}
+            <br>
+            <!---->
+            Categories :
+            {% for category in poc.categories %}
+            {{category.name}}
+            {% endfor %}
+            <br>
             {% if poc.isPremium %}
             Premium : {{ poc.isPremium ? 'Yes' : 'No' }} <br>
             Price : {{ poc.price }} € <br>

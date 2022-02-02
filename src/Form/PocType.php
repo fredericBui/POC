@@ -17,7 +17,8 @@ class PocType extends AbstractType
         $builder
             ->add('name')
             ->add('image', FileType::class, [
-                'mapped' => false
+                'mapped' => false,
+                'required' => false
             ])
             ->add('githubLink')
             ->add('liveDemoLink')
