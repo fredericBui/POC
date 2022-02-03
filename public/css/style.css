@@ -191,3 +191,7 @@
     opacity: 1;
     transition: .5s ease;
     }
+
+    .h50px{
+        height: 50px;
+    }
