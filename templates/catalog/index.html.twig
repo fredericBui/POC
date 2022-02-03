@@ -3,7 +3,7 @@
 {% block title %}POC Catalog{% endblock %}
 
 {% block body %}
-    <h1 class="t-center">POC catalog</h1>
+    <h1 class="text-center">POC catalog</h1>
 
     <form class="gridSearch m1" method="get" action="{{ path('catalog_index') }}">
         <button class="btn" type="submit"><i class="fas fa-search"></i></button>
@@ -44,6 +44,9 @@
         <p>No records found</p>
     {% endfor %}
     </section>
+
+    <p class="text-center">You can't find the missing piece for your incredible project ?</p>
+    <p class="text-center">Please <a href="{{path("contact")}}">contact us</a>.</p>
 
 
 {% endblock %}

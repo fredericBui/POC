@@ -35,6 +35,10 @@
         background-color: rgb(75, 75, 75);
     }
 
+    .footer{
+        background-color: rgb(75, 75, 75);
+    }
+
 /* All my font : */
 
     /* 0 - Tags */
@@ -45,12 +49,6 @@
 
     a{
         font-weight:500;
-    }
-
-    /* 1 - Reusable class for alignement */
-
-    .t-center {
-        text-align: center;
     }
 
     .t-right {
@@ -133,7 +131,7 @@
 /* Responsive */
 
     /* Mobile */
-    
+
     @media (min-width: 700px) { 
         #pocList{
             display: grid;
@@ -142,6 +140,16 @@
 
         .gridSearch{
             grid-template-columns: 5% 95%;
+        }
+
+    }
+
+    @media (min-width: 800px) { 
+
+        .grid2{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 1%;
         }
     }
 

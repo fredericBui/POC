@@ -3,19 +3,28 @@
 {% block title %}A piece of code{% endblock %}
 
 {% block body %}
-<h1 class="t-center">How to</h1>
+<h1 class="text-center">The missing piece of your web project !</h1>
 
-<video controls width=100%>
-    <source src={{asset("media/intro.mp4")}} type="video/mp4">
-    Sorry, your browser doesn't support embedded videos.
-</video>
+<nav>
+    <ul class="grid2">
+        <li class="card p-5 m-5">
+            <a href={{path("catalog_index")}}>
+                <h1 class="text-center">Find</h1>
+                <img  src="{{asset('media/puzzle.png')}}"/>
+                <h1 class="text-center">The missing piece</h1>
+            </a>
+        </li>
+        <li class="card p-5 m-5">
+            <a href={{path("profil_myPoc")}}>
+                <h1 class="text-center">Share</h1>
+                <img src="{{asset("/media/puzzle.svg")}}"/>
+                <h1 class="text-center">A piece of code</h1>
+            </a>
+        </li>
+    </ul>
+</nav>
 
-<h2 class="t-center">Free & Premium POC (piece of code)</h2>
-
-<form class="gridSearch mY1" method="get" action="{{ path('catalog_index') }}">
-    <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-    <input class="borderNone" type="text" placeholder="Search by keywords" name="keyword"/>
-</form>
+<h2 class="text-center">Famous piece of code</h2>
 
 <section>
 {% for poc in pocs %}

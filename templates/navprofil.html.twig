@@ -3,23 +3,23 @@
     <div>
     {% if app.user %}<p> Hi {{app.user.pseudo }} !</p>{% endif %}
     {% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN') == false %}
-    <a href={{ path('profil_show') }}><p class="t-center">My profil</p></a>
-        <a href={{ path('profil_myPoc') }}><p class="t-center">My POC</p></a>
-        <a href={{ path('app_logout') }}><p class="t-center">Log out</p></a>
+    <a href={{ path('profil_show') }}><p class="text-center">My profil</p></a>
+        <a href={{ path('profil_myPoc') }}><p class="text-center">My POC</p></a>
+        <a href={{ path('app_logout') }}><p class="text-center">Log out</p></a>
     {% elseif is_granted('ROLE_ADMIN') %}
-        <a href={{path("admin_poc_index")}}><p class="t-center">POC</p></a>
-        <a href={{path("admin_user_index")}}><p class="t-center">User</p></a>
-        <a href={{path("admin_language_index")}}><p class="t-center">Language</p></a>
-        <a href={{path("admin_category_index")}}><p class="t-center">Category</p></a>
-        <a href={{path("admin_purchase_index")}}><p class="t-center">Purchase</p></a>
-        <a href={{path("admin_payment_index")}}><p class="t-center">Payment</p></a>
+        <a href={{path("admin_poc_index")}}><p class="text-center">POC</p></a>
+        <a href={{path("admin_user_index")}}><p class="text-center">User</p></a>
+        <a href={{path("admin_language_index")}}><p class="text-center">Language</p></a>
+        <a href={{path("admin_category_index")}}><p class="text-center">Category</p></a>
+        <a href={{path("admin_purchase_index")}}><p class="text-center">Purchase</p></a>
+        <a href={{path("admin_payment_index")}}><p class="text-center">Payment</p></a>
         <hr>
-        <a href={{ path('app_logout') }}><p class="t-center">Log out</p></a>
+        <a href={{ path('app_logout') }}><p class="text-center">Log out</p></a>
     {% else %}
-        <a href={{path("app_login")}}><p class="t-center">Login</p></a>
-        <a href={{path("app_register")}}><p class="t-center">Register</p></a>
+        <a href={{path("app_login")}}><p class="text-center">Login</p></a>
+        <a href={{path("app_register")}}><p class="text-center">Register</p></a>
     {% endif %}
-        <p class="t-center" onclick="darkMode()"><i class="fas fa-moon"></i> Dark Mode</p>
+        <p class="text-center" onclick="darkMode()"><i class="fas fa-moon"></i> Dark Mode</p>
     </div>
 
 </nav>
