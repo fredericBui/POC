@@ -5,7 +5,7 @@
 {% block body %}
     <h1 class="t-center">POC catalog</h1>
 
-    <form class="gridSearch m1" method="get" action="{{ path('catalog_search') }}">
+    <form class="gridSearch m1" method="get" action="{{ path('catalog_index') }}">
         <button class="btn" type="submit"><i class="fas fa-search"></i></button>
         <input class="borderNone" type="text" placeholder="Search by keywords" name="keyword"/>
     </form>

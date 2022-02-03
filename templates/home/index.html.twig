@@ -12,7 +12,7 @@
 
 <h2 class="t-center">Free & Premium POC (piece of code)</h2>
 
-<form class="gridSearch mY1" method="get" action="{{ path('catalog_search') }}">
+<form class="gridSearch mY1" method="get" action="{{ path('catalog_index') }}">
     <button class="btn" type="submit"><i class="fas fa-search"></i></button>
     <input class="borderNone" type="text" placeholder="Search by keywords" name="keyword"/>
 </form>
@@ -29,7 +29,7 @@
                 <div class="card-body">
                     <!--<p class="t-right"><i class="fas fa-heart" onclick="toggleThis(this, 'switchOn')"></i></p>-->
                     <p>Name : {{ poc.name }}<br>
-                    Author : {{ poc.Author }} <br>
+                    Author : {{ poc.Author.pseudo }} <br>
                     {% if poc.isPremium %}
                     Price : {{ poc.price }} €<br>
                 {% endif %}
