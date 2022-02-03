@@ -76,11 +76,10 @@
         border-radius: 2em;
     }
 
-    .gridForm{
-        display: grid;
-        grid-template-columns: 1fr;
+    .block{
+        display: block;
     }
-
+    
     .flex{
         display: flex;
     }
@@ -88,6 +87,12 @@
     .grid3{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        padding: 1%;
+    }
+
+    .grid4{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         padding: 1%;
     }
 

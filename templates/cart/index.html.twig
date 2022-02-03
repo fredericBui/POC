@@ -6,30 +6,27 @@
 
 {% if cart.elements %}
 
-<table>
+<table class="table">
     <tr>
         <th>Name</th>
         <th>Quantity</th>
         <th>Price</th>
     </tr>
 
-
 {% for element in cart.elements %}
     <tr>
         <td>{{element.poc.name }}</td>
         <td>{{element.quantity }}</td>
         <td>{{element.poc.price }}€</td>
-        <td><a href="{{ path('cart_remove', {'id': element.poc.id}) }}"><button class="btn btn-danger">Remove one</button></a></td>
+        <td><a href="{{ path('cart_remove', {'id': element.poc.id}) }}"><i class="fas fa-trash-alt"></i></a></td>
     </tr>
 {% endfor %}
-
+    <tr>
+        <td>Total : {{cart.total}} €</td>
+    </tr>
 </table>
 
-<div>
-    Total of the shopping cart : {{cart.total}}
-</div>
-
-<a href="{{ path('payment_index') }}"><button class="btn btn-success">Pay</button></a>
+<a href="{{ path('payment_index') }}"><button class="btn btn-success"><i class="far fa-credit-card"></i> Pay</button></a>
 <a href="{{ path('cart_clear') }}"><button class="btn btn-danger">Clear cart</button></a>
 
 {% else %}

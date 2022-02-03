@@ -6,8 +6,8 @@
     <h1>Edit Payment</h1>
 
     {{ include('admin_payment/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin_payment/_delete_form.html.twig') }}
 
     <a href="{{ path('admin_payment_index') }}">back to list</a>
 
-    {{ include('admin_payment/_delete_form.html.twig') }}
 {% endblock %}
