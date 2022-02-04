@@ -85,7 +85,7 @@ class ProfilController extends AbstractController
             return $this->redirectToRoute('profil_myPoc', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('admin_poc/new.html.twig', [
+        return $this->renderForm('profil/newPoc.html.twig', [
             'poc' => $poc,
             'form' => $form,
         ]);

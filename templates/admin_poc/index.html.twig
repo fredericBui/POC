@@ -13,7 +13,7 @@
                 <th>ImageFilename</th>
                 <th>GithubLink</th>
                 <th>Author</th>
-                <th>actions</th>
+                <th>Actionss</th>
             </tr>
         </thead>
         <tbody>
@@ -27,8 +27,10 @@
                 <td>{{ poc.githubLink }}</td>
                 <td>{{ poc.Author }}</td>
                 <td>
-                    <a href="{{ path('admin_poc_show', {'id': poc.id}) }}">show</a>
-                    <a href="{{ path('admin_poc_edit', {'id': poc.id}) }}">edit</a>
+                    <a href="{{ path('admin_poc_show', {'id': poc.id}) }}"><i class="fas fa-eye"></i></a>
+                    <a href="{{ path('admin_poc_edit', {'id': poc.id}) }}"><i class="fas fa-edit"></i></a>
+                    {{ include('admin_poc/_delete_form.html.twig') }}
+
                 </td>
             </tr>
         {% else %}
@@ -39,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_poc_new') }}">Create new</a>
+    <a href="{{ path('admin_poc_new') }}"><button class="btn btn-success">Create new</button></a>
 {% endblock %}

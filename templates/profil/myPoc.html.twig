@@ -8,19 +8,17 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Name</th>
                 <th>ImageFilename</th>
                 <th>Keywords</th>
                 <th>Premium (1=yes)</th>
                 <th>Price</th>
-                <th>actions</th>
+                <th>Actionss</th>
             </tr>
         </thead>
         <tbody>
         {% for poc in pocs %}
             <tr>
-                <td>{{ poc.id }}</td>
                 <td>{{ poc.name }}</td>
                 <td>
                     <img src= "{{ asset('uploads/' ~ poc.imageFilename ) }}"/>
@@ -29,13 +27,13 @@
                 <td>{{ poc.isPremium }}</td>
                 <td>{{ poc.price }}</td>
                 <td>
-                    <a href="{{path('profil_myPoc_show', {'id': poc.id}) }}"><button class="btn btn-primary">Show</button></a>
-                    <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}"><button class="btn btn-primary">Edit</button></a>
+                    <a href="{{path('profil_myPoc_show', {'id': poc.id}) }}"><i class="fas fa-eye"></i></a>
+                    <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}"><i class="fas fa-edit"></i></a>
                 </td>
             </tr> 
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">No records found</td>
             </tr>
         {% endfor %}
         </tbody>

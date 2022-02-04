@@ -1,4 +1,18 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.image) }}
+    <p>Image must be under 2MiB</p>
+    {{ form_row(form.githubLink) }}
+    {{ form_row(form.liveDemoLink) }}
+    {{ form_row(form.keywords) }}
+    <p>Keywords will help developer to find your code.</p>
+    {{ form_label(form.languages) }}<br/>
+    {{ form_widget(form.languages) }}<br/>
+    {{ form_label(form.categories) }}<br/>
+    {{ form_widget(form.categories) }}<br/>
+    {{ form_row(form.isPremium) }}
+    <p>Check this box will hide your githubLink.</p>
+    {{ form_row(form.price) }}
+    <p>If free set the price to zero.</p>
     <button class="btn btn-success">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
