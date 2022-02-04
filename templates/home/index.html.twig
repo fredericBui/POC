@@ -49,7 +49,7 @@
                     {% if poc.isPremium == false %}
                     <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-warning"><i class="fab fa-github"></i> Free</button></a>
                     {% endif %}
-                    <a href="{{ path('catalog_show', {'id': poc.id}) }}" target="_blank"><button class="btn btn-info"><i class="fas fa-eye"></i> Details</button></a>
+                    <a href="{{ path('catalog_show', {'id': poc.id}) }}"><button class="btn btn-info"><i class="fas fa-eye"></i> Details</button></a>
                     
                 </div>
             </div>
