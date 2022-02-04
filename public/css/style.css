@@ -167,11 +167,6 @@
         width: 100%;
     }
     
-    img{
-    width: 100%;
-    }
-    
-    
     .text {
     position: absolute;
     color: dark;
@@ -190,8 +185,4 @@
     .container2:hover .text{
     opacity: 1;
     transition: .5s ease;
-    }
-
-    .h50px{
-        height: 50px;
     }
