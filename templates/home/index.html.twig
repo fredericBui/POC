@@ -3,58 +3,30 @@
 {% block title %}A piece of code{% endblock %}
 
 {% block body %}
-<h1 class="text-center">The missing piece of your web project !</h1>
+<h1 class="text-center text-light p-4">The missing piece of your web project !</h1>
 
 <nav>
     <ul class="grid2">
-        <li class="card p-5 m-5">
+        <li class="card p-4 ml-5 mr-4">
             <a href={{path("catalog_index")}}>
-                <h1 class="text-center">Find</h1>
+                <h2 class="text-center">Find</h2>
                 <img  src="{{asset('media/puzzle.png')}}"/>
-                <h1 class="text-center">The missing piece</h1>
             </a>
         </li>
-        <li class="card p-5 m-5">
+        <li class="card p-4 ml-4 mr-5">
             <a href={{path("profil_myPoc")}}>
-                <h1 class="text-center">Share</h1>
+                <h2 class="text-center">Share</h2>
                 <img src="{{asset("/media/puzzle.svg")}}"/>
-                <h1 class="text-center">A piece of code</h1>
             </a>
         </li>
     </ul>
 </nav>
 
-<h2 class="text-center">Famous piece of code</h2>
+<h2 class="text-center text-light">Famous piece of code</h2>
 
-<section>
+<section class="grid3">
 {% for poc in pocs %}
-    <article class="card mY1">
-        <div class="row no-gutters">
-            <div class="col-md-4 container2">
-                <a class="hoverImageText" href="{{ poc.liveDemoLink }}" target="_blank"><img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt=""></a>
-                <div class="text">Try me</div>
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <!--<p class="t-right"><i class="fas fa-heart" onclick="toggleThis(this, 'switchOn')"></i></p>-->
-                    <p>Name : {{ poc.name }}<br>
-                    Author : {{ poc.Author.pseudo }} <br>
-                    {% if poc.isPremium %}
-                    Price : {{ poc.price }} €<br>
-                {% endif %}
-
-                    {% if poc.isPremium %}
-                    <a href="{{ path('cart_add', {'id': poc.id}) }}"><button class="btn btn-success"><i class="fas fa-shopping-cart"></i> Buy</button></a>
-                    {% endif %}
-                    {% if poc.isPremium == false %}
-                    <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-warning"><i class="fab fa-github"></i> Free</button></a>
-                    {% endif %}
-                    <a href="{{ path('catalog_show', {'id': poc.id}) }}"><button class="btn btn-info"><i class="fas fa-eye"></i> Details</button></a>
-                    
-                </div>
-            </div>
-        </div>
-    </article>
+    {{include("Composants/card.html.twig")}}
 {% else %}
     <p>No records found</p>
 {% endfor %}

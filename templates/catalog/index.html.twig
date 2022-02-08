@@ -5,10 +5,18 @@
 {% block body %}
     <h1 class="text-center">POC catalog</h1>
 
+    <!--Search bar-->
     <form class="gridSearch m1" method="get" action="{{ path('catalog_index') }}">
         <button class="btn" type="submit"><i class="fas fa-search"></i></button>
         <input class="borderNone" type="text" placeholder="Search by keywords" name="keyword"/>
     </form>
+
+    <div class="text-center">
+        <button>E-commerce</button>
+        <button>Social-Network</button>
+        <button>Landing Page</button>
+        <button>blog</button>
+    </div>
 
     <br>
 
@@ -16,30 +24,7 @@
 
     <section id="pocList">
     {% for poc in pocs %}
-        <article class="card m1">
-            <div class="card-body">
-                <!--<p class="t-right"><i class="fas fa-heart" onclick="toggleThis(this, 'switchOn')"></i></p>-->
-                <div class="container2">
-                    <a href="{{ poc.liveDemoLink }}" target="_blank"><img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt=""></a>
-                    <div class="text">Try me</div>
-                </div>
-                <p>Name : {{ poc.name }}<br>
-                Author : {{ poc.Author }} <br>
-
-                {% if poc.isPremium %}
-                Price : {{ poc.price }} € <br>
-                {% endif %}
-
-                {% if poc.isPremium %}
-                <a href="{{ path('cart_add', {'id': poc.id}) }}"><button class="btn btn-success"><i class="fas fa-shopping-cart"></i> Buy</button></a>
-                {% endif %}
-                {% if poc.isPremium == false %}
-                <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-warning"><i class="fab fa-github"></i> Free</button></a>
-                {% endif %}
-                <a href="{{ path('catalog_show', {'id': poc.id}) }}"><button class="btn btn-info"><i class="fas fa-eye"></i> Details</button></a>
-    
-            </div>
-        </article>
+        {{include("Composants/card.html.twig")}}
     {% else %}
         <p>No records found</p>
     {% endfor %}

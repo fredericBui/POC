@@ -1,0 +1,48 @@
+<article class="card mx-2">
+    <div class="floatingCategory">
+        {% for category in poc.categories %}
+        <div class="categoryCircle">{{category.name}}</div>
+        {% endfor %}
+    </div>
+    <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
+    
+    <div class="card-body">
+        <!--<p class="t-right"><i class="fas fa-heart" onclick="toggleThis(this, 'switchOn')"></i></p>-->
+        <div class="gridCard">
+            <div>
+                <b>{{ poc.name }}</b></br>
+            </div>
+            <div class="flex">
+                {% for language in poc.languages %}
+                    {% if language.name == "JS" %}
+                    <button class="btn btn-warning mr-1">{{language.name}}</button>
+                    {% else %}
+                    <button class="btn btn-primary mr-1">{{language.name}}</button>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        by {{ poc.Author.pseudo }}
+        <br/>
+        <br/>
+        <b>Description</b>
+        <p>{{ poc.keywords }} </p>
+
+        <div class="text-right">
+            {% if poc.isPremium>0 %}
+            {{ poc.price }} €<br>
+            {% else %}
+            Free<br>
+            {% endif %}
+
+            {% if poc.isPremium %}
+                <a href="{{ path('cart_add', {'id': poc.id}) }}"><button class="btn btn-warning mt-2"><i class="fas fa-shopping-cart"></i></button></a>
+            {% endif %}
+            {% if poc.isPremium == false %}
+                <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-warning mt-2"><i class="fas fa-file-download"></i></button></a>
+            {% endif %}
+            <a href="{{ poc.liveDemoLink }}" target="_blank"><button class="btn btn-info mt-2"><i class="fas fa-eye"></i> Live demo</button></a>
+        </div>
+        
+    </div>
+</article>

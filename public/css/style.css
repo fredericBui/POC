@@ -16,13 +16,20 @@
 
     /* 1 - Light mode */
 
+    .text-light{
+        color: rgba(229, 229, 229, 1);
+    }
+
+    .light{
+        background-color: white;
+    }
 
     .lightSubNav{
         background-color: rgb(52, 96, 110);
     }
 
     .lightBody{
-        background-color: #F4F6F9;
+        background-color: rgba(53, 75, 89, 1);
     }
 
     /* 2 - Dark mode */
@@ -36,7 +43,7 @@
     }
 
     .footer{
-        background-color: rgb(75, 75, 75);
+        background-color: rgb(109, 109, 109);
     }
 
 /* All my font : */
@@ -186,3 +193,78 @@
     opacity: 1;
     transition: .5s ease;
     }
+
+    /*New Css*/
+
+    .gridNav{
+        display: grid;
+        grid-template-columns: 1fr 8fr 1fr;
+        padding: 1%;
+    }
+
+    .gridCard{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .box{
+        width: 200px;
+        position: absolute;
+        z-index: 1;
+        top: 80px; right: 10px;
+    }
+
+    li{
+        display: block;
+    }
+
+    .floatingCategory{
+        display: flex;
+        position: absolute;
+        z-index: 1;
+        top: 10px; left: 10px;
+    }
+
+    .categoryCircle{
+        background-color: aliceblue;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 5px;
+        border-radius: 1em;
+    }
+
+    .puzzleFloating{
+        width: 30%;
+        position: absolute;
+        z-index: -1;
+        top: 100px; right: 10px;
+    }
+
+    .puzzleFloating2{
+        width: 20%;
+        position: absolute;
+        z-index: -1;
+        top: 100px; right: 10px;
+    }
+
+    .foo{
+        color: white;
+        width: 70%;
+    }
+
+    .formLogin{
+        color: white;
+        width: 50%;
+        margin: auto;
+    }
+
+    .foo2{
+        outline: none;    
+    }
+
+    input[type="text"]{
+
+        border: none;
+
+      
+      }
