@@ -215,7 +215,7 @@
     }
 
     li{
-        display: block;
+        display: flex;
     }
 
     .floatingCategory{
@@ -258,13 +258,54 @@
         margin: auto;
     }
 
-    .foo2{
-        outline: none;    
+
+/* General */
+
+/* Nav Bar */
+#mainNav{
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    padding: 1%;
+    background-color: white;
+}
+
+#mainNav button{
+    display: none;
+}
+
+@media (max-width: 560px) { 
+    #mainNav button{
+        display: block;
     }
 
-    input[type="text"]{
+    #mainNav #navLogo{
+        display: block;
+    }
 
-        border: none;
+    #link li{
+        display: none;
+    }
+}
 
-      
-      }
+#mainNav #link{
+    display: flex;
+}
+
+
+
+/* Home page */
+
+/* Contact page */
+
+.formContact{
+    width: 70%;
+}
+
+.puzzleFloating3{
+    width: 30%;
+    position: absolute;
+    z-index: -1;
+    top: 10px; right: 10px;
+    transform: rotate(-20deg);
+
+}
