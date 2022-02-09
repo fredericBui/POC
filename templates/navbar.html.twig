@@ -42,7 +42,7 @@
                 <li><a href={{ path('app_logout') }}><p>Log out</p></a></li>
             <!--Admin Profil-->
             {% elseif is_granted('ROLE_ADMIN') %}
-                <li><a href="#"><p>Admin</p></a></li>
+                <li><a href={{ path('admin_user_index') }}><p>Admin</p></a></li>
                 <li><a href={{ path('profil_myPoc') }}><p>My POC</p></a></li>
                 <li><a href={{ path('app_logout') }}><p>Log out</p></a></li>
             <!--Visitor Profil-->
