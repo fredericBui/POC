@@ -14,9 +14,9 @@
         </div>
     {% endif %}
 
-    <h1 class="text-center text-light mt-5">Login</h1>
+    <h1 class="text-center mt-5">Login</h1>
     <img class="puzzleFloating2" src="{{asset('media/puzzle.svg')}}"/>
-    <div class="text-center formLogin">
+    <div id="formLogin" class="text-center">
         <label for="inputEmail">Email</label>
         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
         <br/>

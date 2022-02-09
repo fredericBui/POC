@@ -6,9 +6,9 @@
     <h1 class="text-center">POC catalog</h1>
 
     <!--Search bar-->
-    <form class="gridSearch m1" method="get" action="{{ path('catalog_index') }}">
+    <form id="searchBar" class="m-3" method="get" action="{{ path('catalog_index') }}">
         <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-        <input class="borderNone" type="text" placeholder="Search by keywords" name="keyword"/>
+        <input id="searchInput" type="text" placeholder="Search by keywords" name="keyword"/>
     </form>
 
     <div class="text-center">

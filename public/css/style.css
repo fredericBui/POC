@@ -1,267 +1,104 @@
-/* All my colors : */
 
-    /* 0 - Tags */
+/* 1 - Light mode */
 
-    a{
-        color:black;
-    }
+.text-light{
+    color: rgba(229, 229, 229, 1);
+}
 
-    .fa-heart{
-        color:lightgray;
-    }
+.light{
+    background-color: white;
+}
 
-    .switchOn{
-        color:red;
-    }
+.lightSubNav{
+    background-color: rgb(52, 96, 110);
+}
 
-    /* 1 - Light mode */
+.lightBody{
+    background-color: rgba(53, 75, 89, 1);
+}
 
-    .text-light{
-        color: rgba(229, 229, 229, 1);
-    }
+/* 2 - Dark mode */
 
-    .light{
-        background-color: white;
-    }
+.darkSubNav{
+    background-color: rgb(58, 58, 58);
+}
 
-    .lightSubNav{
-        background-color: rgb(52, 96, 110);
-    }
+.darkBody{
+    background-color: rgb(75, 75, 75);
+}
 
-    .lightBody{
-        background-color: rgba(53, 75, 89, 1);
-    }
+.footerColor{
+    background-color: rgb(109, 109, 109);
+}
 
-    /* 2 - Dark mode */
-
-    .darkSubNav{
-        background-color: rgb(58, 58, 58);
-    }
-
-    .darkBody{
-        background-color: rgb(75, 75, 75);
-    }
-
-    .footer{
-        background-color: rgb(109, 109, 109);
-    }
-
-/* All my font : */
-
-    /* 0 - Tags */
-
-    body{
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    a{
-        font-weight:500;
-    }
-
-    .t-right {
-        text-align: right;
-    }
-
-/* Structures : */
-
-    .displayNone{
-        display: none;
-    }
-
-    .displayGrid{
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    .gridSearch{
-        display: grid;
-        grid-template-columns: 10% 90%;
-        padding: 1%;
-        background-color: white;
-        border-radius: 2em;
-    }
-
-    .block{
-        display: block;
-    }
-    
-    .flex{
-        display: flex;
-    }
-
-    .grid3{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        padding: 1%;
-    }
-
-    .grid4{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        padding: 1%;
-    }
-
-    .borderNone{   
-        border:none;
-    }
-
-    img{
-        width: 100%;
-        padding: 5px;
-        border-radius: 10px;
-    }
-
-    .whiteCircle{
-        background-color: rgb(58, 58, 58);
-        color: white;
-        border-radius: 2em;
-        padding: 0.5em;
-    }
-
-    .p05{
-        padding: 0.5em;
-    }
-
-    .mY1{
-        margin-top: 1em;
-        margin-bottom: 1em;
-    }
-
-    .m1{
-        margin: 1em;
-    }
-
-    .cursorP{
-        cursor: pointer;
-    }
-
-/* Responsive */
-
-    /* Mobile */
-
-    @media (min-width: 700px) { 
-        #pocList{
-            display: grid;
-            grid-template-columns: 1fr 1fr ;
-        }
-
-        .gridSearch{
-            grid-template-columns: 5% 95%;
-        }
-
-    }
-
-    @media (min-width: 800px) { 
-
-        .grid2{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            padding: 1%;
-        }
-    }
-
-    @media (min-width: 1000px) { 
-        #pocList{
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-    }
-
-    /*Hover effect*/
-
-    .container2{
-        position: relative;
-        width: 100%;
-    }
-    
-    .text {
-    position: absolute;
-    color: dark;
-    font-size: 20px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    }
-    
-    .container2:hover{
-    opacity: 0.8;
-    transition: .5s ease;
-    }
-    
-    .container2:hover .text{
-    opacity: 1;
-    transition: .5s ease;
-    }
-
-    /*New Css*/
-
-    .gridNav{
-        display: grid;
-        grid-template-columns: 1fr 8fr 1fr;
-        padding: 1%;
-    }
-
-    .gridCard{
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-    }
-
-    .box{
-        width: 200px;
-        position: absolute;
-        z-index: 1;
-        top: 80px; right: 10px;
-    }
-
-    li{
-        display: block;
-    }
-
-    .floatingCategory{
-        display: flex;
-        position: absolute;
-        z-index: 1;
-        top: 10px; left: 10px;
-    }
-
-    .categoryCircle{
-        background-color: aliceblue;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin: 5px;
-        border-radius: 1em;
-    }
-
-    .puzzleFloating{
-        width: 30%;
-        position: absolute;
-        z-index: -1;
-        top: 100px; right: 10px;
-    }
-
-    .puzzleFloating2{
-        width: 20%;
-        position: absolute;
-        z-index: -1;
-        top: 100px; right: 10px;
-    }
-
-    .foo{
-        color: white;
-        width: 70%;
-    }
-
-    .formLogin{
-        color: white;
-        width: 50%;
-        margin: auto;
-    }
+.flex{
+    display: flex;
+}
 
 
-/* General */
+/* This CSS is divide in 4 parts : General, Composants, Pages and Responsive */
+/* Bootstrap class use in this project : all m, all p*/
+
+/* GENERAL */
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li{
+    display: block;
+}
+
+a{
+    font-weight:500;
+    color:black;
+}
+
+.t-right {
+    text-align: right;
+}
+
+h1{
+    color: rgba(229, 229, 229, 1);
+}
+
+img{
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* COMPOSANTS */
 
 /* Nav Bar */
+
+.displayNone{
+    display: none;
+}
+
+.displayGrid{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.cursorP{
+    cursor: pointer;
+}
+
+.floatingMenu{
+    width: 200px;
+    position: absolute;
+    z-index: 1;
+    top: 80px; right: 10px;
+}
+
+.whiteCircle{
+    background-color: rgb(58, 58, 58);
+    color: white;
+    border-radius: 2em;
+    padding: 0.5em;
+}
+
 #mainNav{
     display: grid;
     grid-template-columns: 4fr 2fr;
@@ -291,12 +128,59 @@
     display: flex;
 }
 
+/* Card */
+.gridCard{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
 
+.floatingCategory{
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    top: 10px; left: 10px;
+}
 
-/* Home page */
+.categoryCircle{
+    background-color: aliceblue;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+    border-radius: 1em;
+}
 
-/* Contact page */
+/* PAGES : */
 
+/* Home */
+.grid3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1%;
+}
+
+/* Login*/
+#formLogin{
+    color: white;
+    width: 50%;
+    margin: auto;
+}
+
+.puzzleFloating2{
+    width: 20%;
+    position: absolute;
+    z-index: -1;
+    top: 100px; right: 10px;
+}
+
+/* Registration*/
+.puzzleFloating{
+    width: 30%;
+    position: absolute;
+    z-index: -1;
+    top: 100px; right: 10px;
+}
+
+/* Contact */
 .formContact{
     width: 70%;
 }
@@ -307,7 +191,6 @@
     z-index: -1;
     top: 10px; right: 10px;
     transform: rotate(-20deg);
-
 }
 
 /* About us */
@@ -322,7 +205,7 @@
 }
 
 /* Profil - My POC */
-.img10{
+#myPocImage{
     height: 100px;
 }
 
@@ -356,4 +239,46 @@
 .divider2b{
     display: grid;
     grid-template-columns: 15% 80%;
+}
+
+/* Catalog */
+
+#searchBar{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    padding: 1%;
+    background-color: white;
+    border-radius: 2em;
+}
+
+#searchInput{   
+    border:none;
+}
+
+/* RESPONSIVE : */
+
+@media (min-width: 700px) { 
+    #pocList{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+    }
+
+    #searchBar{
+        grid-template-columns: 5% 95%;
+    }
+}
+
+@media (min-width: 800px) { 
+    .grid2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 1%;
+    }
+}
+
+@media (min-width: 1000px) { 
+    #pocList{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }

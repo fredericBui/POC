@@ -9,7 +9,7 @@
             <li class="pr-3"><a href={{path("aboutus")}}>About us</a></li>
         </div>
         <div class="text-right">
-            <a href={{path("cart_index")}}><i class="fas fa-shopping-cart p05"></i></a>
+            <a href={{path("cart_index")}}><i class="fas fa-shopping-cart p-1"></i></a>
             <i class="fas fa-user whiteCircle cursorP" onclick="toggleTarget('navprofil', 'diplayNone', 'displayGrid')"></i>
         </div> 
     </ul>
@@ -18,17 +18,17 @@
 <!--burger responsive-->
 <nav id="navtoggle" class="lightSubNav displayNone">
     <ul class="text-center p-2">
-        <li class="block pr-3"><a href={{path("home")}}>Home</a></li>
-        <li class="block pr-3"><a href={{path("catalog_index")}}>Catalog</a></li>
-        <li class="block pr-3"><a href={{path("contact")}}>Contact</a></li>
-        <li class="block pr-3"><a href={{path("aboutus")}}>About us</a></li>
+        <li class="pr-3"><a href={{path("home")}}>Home</a></li>
+        <li class="pr-3"><a href={{path("catalog_index")}}>Catalog</a></li>
+        <li class="pr-3"><a href={{path("contact")}}>Contact</a></li>
+        <li class="pr-3"><a href={{path("aboutus")}}>About us</a></li>
     </ul>
 </nav>
 
 <!--Profil-->
 
 
-<div class="box">
+<div class="floatingMenu">
     <nav id="navprofil" class="light displayNone">
         <ul class="text-center p-2">
             {% if app.user %}

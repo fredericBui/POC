@@ -3,7 +3,7 @@
 {% block title %}My POC{% endblock %}
 
 {% block body %}
-    <h1 class="text-center text-light">My POC</h1>
+    <h1 class="text-center">My POC</h1>
 
     <table class="table text-light">
         <thead>
@@ -21,7 +21,7 @@
             <tr class="text-center">
                 <td>{{ poc.name }}</td>
                 <td>
-                    <img class="img10"src= "{{ asset('uploads/' ~ poc.imageFilename ) }}"/>
+                    <img id="myPocImage"src= "{{ asset('uploads/' ~ poc.imageFilename ) }}"/>
                 </td>
                 <td>{{ poc.keywords }}</td>
                 <td>{{ poc.isPremium }}</td>
