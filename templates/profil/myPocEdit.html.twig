@@ -3,10 +3,13 @@
 {% block title %}Edit Poc{% endblock %}
 
 {% block body %}
-    <h1>Edit Poc</h1>
+    <h1 class="text-center text-light">Edit {{poc.name}}</h1>
 
-    {{ include('profil/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="text-light box4 card grey p-5">
+        {{ include('profil/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
+    
 
-    <a href="{{ path('profil_myPoc') }}"><button class="btn btn-primary">back to my POC</button></a>
+    <div class="text-center m-4"><a href="{{ path('profil_myPoc') }}"><button class="btn btn-primary">Back to my POC</button></a></div>
 
 {% endblock %}

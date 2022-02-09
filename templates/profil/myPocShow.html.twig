@@ -3,48 +3,20 @@
 {% block title %}Poc{% endblock %}
 
 {% block body %}
-    <h1 class="text-center">{{ poc.name }}</h1>
+    
+    <div class="card box3 grey mt-5 mb-5">
+        <h1 class="text-center text-light">{{ poc.name }}</h1>
 
-    <article class="card">
-        <div class="card-body">
-            <!--<p class="t-right"><i class="fas fa-heart" onclick="toggleThis(this, 'switchOn')"></i></p>-->
-            <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
-            <p>Author : {{ poc.Author }} <br>
-            Keywords : {{ poc.keywords }} <br>
-            <!---->
-            Langages :
-            {% for language in poc.languages %}
-            {{language.name}}
-            {% endfor %}
-            <br>
-            <!---->
-            Categories :
-            {% for category in poc.categories %}
-            {{category.name}}
-            {% endfor %}
-            <br>
-            {% if poc.isPremium %}
-            Premium : {{ poc.isPremium ? 'Yes' : 'No' }} <br>
-            Price : {{ poc.price }} € <br>
-            {% endif %}
-            </p>
-            
+        {{include('Composants/card.html.twig')}}
 
-            {% if poc.isPremium %}
-            <a href="{{ path('cart_add', {'id': poc.id}) }}"><button class="btn btn-success"><i class="fas fa-shopping-cart"></i> Add to cart</button></a>
-            {% endif %}
-            {% if poc.isPremium == false %}
-            <a href="{{ poc.githubLink }}" target="_blank"><button class="btn btn-success"><i class="fab fa-github"></i> Github Link</button></a>
-            {% endif %}
-            <a href="{{ poc.liveDemoLink }}" target="_blank"><button class="btn btn-primary"><i class="fas fa-eye"></i> Live demo</button></a>
+        <div class="divider3 p-3">
+            <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}"><button class="btn btn-success"><i class="fas fa-edit"></i> Edit</button></a>
+
+            {{ include('profil/_delete_form.html.twig') }}
         </div>
-    </article>
-
-    <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}"><button class="btn btn-success">Edit</button></a>
-
-    {{ include('profil/_delete_form.html.twig') }}
-
-    <a href="{{ path('profil_myPoc') }}"><button class="btn btn-primary">back to my POC</button></a>
+        <div class="text-center pb-3"><a href="{{ path('profil_myPoc') }}"><button class="btn btn-primary">Back to my POC</button></a></div>
+        
+    </div>
 
 
 {% endblock %}

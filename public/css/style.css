@@ -215,7 +215,7 @@
     }
 
     li{
-        display: flex;
+        display: block;
     }
 
     .floatingCategory{
@@ -319,4 +319,34 @@
 .divider2{
     display: grid;
     grid-template-columns: 40% 60%;
+}
+
+/* Profil - My POC */
+.img10{
+    height: 100px;
+}
+
+/* Profil - My POC show */
+
+.box3{
+    width: 50%;
+    margin: auto;
+}
+
+.divider3{
+    display: flex;
+    margin: auto;
+    width: 40%;
+    justify-content:space-around;
+}
+
+.grey{
+    background-color: rgb(39, 59, 71);
+}
+
+/* Profil - My POC edit */
+
+.box4{
+    width: 80%;
+    margin: auto;
 }

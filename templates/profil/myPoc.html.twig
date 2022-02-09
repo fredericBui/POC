@@ -3,32 +3,32 @@
 {% block title %}My POC{% endblock %}
 
 {% block body %}
-    <h1>My POC</h1>
+    <h1 class="text-center text-light">My POC</h1>
 
-    <table class="table">
+    <table class="table text-light">
         <thead>
-            <tr>
+            <tr class="text-center">
                 <th>Name</th>
-                <th>ImageFilename</th>
+                <th>Image</th>
                 <th>Keywords</th>
                 <th>Premium (1=yes)</th>
                 <th>Price</th>
-                <th>Actionss</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for poc in pocs %}
-            <tr>
+            <tr class="text-center">
                 <td>{{ poc.name }}</td>
                 <td>
-                    <img src= "{{ asset('uploads/' ~ poc.imageFilename ) }}"/>
+                    <img class="img10"src= "{{ asset('uploads/' ~ poc.imageFilename ) }}"/>
                 </td>
                 <td>{{ poc.keywords }}</td>
                 <td>{{ poc.isPremium }}</td>
                 <td>{{ poc.price }}</td>
                 <td>
-                    <a href="{{path('profil_myPoc_show', {'id': poc.id}) }}"><i class="fas fa-eye"></i></a>
-                    <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}"><i class="fas fa-edit"></i></a>
+                    <a href="{{path('profil_myPoc_show', {'id': poc.id}) }}"><i class="fas fa-eye text-light"></i></a>
+                    <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}"><i class="fas fa-edit text-light"></i></a>
                 </td>
             </tr> 
         {% else %}
@@ -39,6 +39,6 @@
         </tbody>
     </table>
 
-    <a href={{path("profil_addPoc")}}><button class="btn btn-success">Create new</button></a>
+    <div class="text-center p-4"><a href={{path("profil_addPoc")}}><button class="btn btn-success pr-5 pl-5">Create new</button></a></div>
 
 {% endblock %}
