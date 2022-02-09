@@ -309,3 +309,14 @@
     transform: rotate(-20deg);
 
 }
+
+/* About us */
+.box2{
+    width: 80%;
+    margin: auto;
+}
+
+.divider2{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
