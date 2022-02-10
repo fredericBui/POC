@@ -45,3 +45,39 @@ function darkMode(){
     document.body.classList.toggle("darkBody");
     document.p.style.color = "#545454";
 }
+
+// PAR DEFAUT //
+
+// Nav
+var navprofil = document.getElementById("navprofil");
+navprofil.style.display="none";
+
+var mainNavMobile = document.getElementById("mainNavMobile");
+mainNavMobile.style.display="none";
+
+
+
+// EVENEMENTS
+
+// Nav
+var logoProfil = document.getElementById("logoProfil");
+logoProfil.onclick = toggleDisplayNav;
+
+function toggleDisplayNav(){ 
+    if(navprofil.style.display=="none"){
+        navprofil.style.display="block";
+    }else{
+        navprofil.style.display="none";
+    }
+}
+
+var burgerButton = document.getElementById("burgerButton");
+burgerButton.onclick = toggleDisplayNavMobile;
+
+function toggleDisplayNavMobile(){ 
+    if(mainNavMobile.style.display=="none"){
+        mainNavMobile.style.display="block";
+    }else{
+        mainNavMobile.style.display="none";
+    }
+}
