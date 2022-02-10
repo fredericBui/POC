@@ -27,10 +27,6 @@
     background-color: rgb(75, 75, 75);
 }
 
-.footerColor{
-    background-color: rgb(109, 109, 109);
-}
-
 .flex{
     display: flex;
 }
@@ -45,7 +41,7 @@ body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-li{
+ul li{
     display: block;
 }
 
@@ -58,7 +54,7 @@ a{
     text-align: right;
 }
 
-h1{
+h1, h2, h3, p, ol li{
     color: rgba(229, 229, 229, 1);
 }
 
@@ -276,6 +272,11 @@ img{
 
 #searchInput{   
     border:none;
+}
+
+/* Footer */
+footer{
+    background-color: rgb(109, 109, 109);
 }
 
 /* RESPONSIVE : */
