@@ -110,7 +110,22 @@ img{
     display: none;
 }
 
+#mainNavMobile{
+    display: none;
+}
+
 @media (max-width: 560px) { 
+
+    #mainNav{
+        display: grid;
+        grid-template-columns: 1fr 5fr 2fr;
+    }
+
+    #mainNavMobile{
+        display: block;
+        background-color: white;
+    }
+
     #mainNav button{
         display: block;
     }
@@ -129,7 +144,7 @@ img{
 }
 
 /* Card */
-.gridCard{
+.gridCard{ 
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
@@ -156,6 +171,18 @@ img{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 1%;
+}
+
+@media (max-width: 1000px) { 
+    .grid3{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 770px) { 
+    .grid3{
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Login*/

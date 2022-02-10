@@ -1,7 +1,8 @@
 <nav>
     <ul id="mainNav">
+        <!--Nav Horizontale-->
+        <button class="m-1"><i class="fas fa-bars"></i></button>
         <div id="link">
-            <button class="m-1"><i class="fas fa-bars"></i></button>
             <li id="navLogo" class="pr-3"><a href={{path("home")}}><i class="fas fa-puzzle-piece" style="color:rgb(250, 218, 76)"></i> P.O.C.</a></li>
             <li class="pr-3"><a href={{path("home")}}>Home</a></li>
             <li class="pr-3"><a href={{path("catalog_index")}}>Catalog</a></li>
@@ -11,7 +12,17 @@
         <div class="text-right">
             <a href={{path("cart_index")}}><i class="fas fa-shopping-cart p-1"></i></a>
             <i class="fas fa-user whiteCircle cursorP" onclick="toggleTarget('navprofil', 'diplayNone', 'displayGrid')"></i>
-        </div> 
+        </div>
+    </ul>
+</nav>
+
+<!--Nav Mobile-->
+<nav>
+    <ul id="mainNavMobile" class="text-center">
+        <li class="pr-3"><a href={{path("home")}}>Home</a></li>
+        <li class="pr-3"><a href={{path("catalog_index")}}>Catalog</a></li>
+        <li class="pr-3"><a href={{path("contact")}}>Contact</a></li>
+        <li class="pr-3"><a href={{path("aboutus")}}>About us</a></li>
     </ul>
 </nav>
 
