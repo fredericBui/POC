@@ -3,7 +3,7 @@
 {% block title %}Panier{% endblock %}
 
 {% block body %}
-
+<div id="cartBody">
 {% if cart.elements %}
 
 <table class="table">
@@ -30,8 +30,8 @@
 <a href="{{ path('cart_clear') }}"><button class="btn btn-danger">Clear cart</button></a>
 
 {% else %}
-Cart empty
-
+<p>Cart empty</p>
+<a href="{{ path('catalog_index') }}"><button class="btn btn-primary">Back to the catalog</button></a>
 {% endif %}
-
+</div>
 {% endblock %}

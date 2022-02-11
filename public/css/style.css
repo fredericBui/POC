@@ -41,6 +41,14 @@ body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+footer{
+    background-color: rgb(109, 109, 109);
+}
+
+footer p{
+    color: black;
+}
+
 ul li{
     display: block;
 }
@@ -135,6 +143,10 @@ img{
     display: flex;
 }
 
+#navprofil ul li p{
+    color: black;
+}
+
 /* Card */
 .gridCard{ 
     display: grid;
@@ -156,9 +168,24 @@ img{
     border-radius: 1em;
 }
 
+#POCcard p{
+    color: black;
+}
+
 /* PAGES : */
 
 /* Home */
+
+.grid2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1%;
+}
+
+.grid2 h2{
+    color: black;
+}
+
 .grid3{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -178,6 +205,10 @@ img{
 }
 
 /* Login*/
+#loginBody{
+    height: 70vh;
+}
+
 #formLogin{
     color: white;
     width: 50%;
@@ -192,6 +223,14 @@ img{
 }
 
 /* Registration*/
+#registerBody{
+    height: 80vh;
+}
+
+#registerForm{
+    width: 70%;
+    color: white;
+}
 .puzzleFloating{
     width: 30%;
     position: absolute;
@@ -274,10 +313,12 @@ img{
     border:none;
 }
 
-/* Footer */
-footer{
-    background-color: rgb(109, 109, 109);
+/* Cart */
+
+#cartBody{
+    height: 75vh;
 }
+
 
 /* RESPONSIVE : */
 
@@ -292,13 +333,6 @@ footer{
     }
 }
 
-@media (min-width: 800px) { 
-    .grid2{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 1%;
-    }
-}
 
 @media (min-width: 1000px) { 
     #pocList{

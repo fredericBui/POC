@@ -11,16 +11,15 @@
         <input id="searchInput" type="text" placeholder="Search by keywords" name="keyword"/>
     </form>
 
-    <div class="text-center">
-        <button>E-commerce</button>
-        <button>Social-Network</button>
-        <button>Landing Page</button>
-        <button>blog</button>
+    <div class="text-center my-2">
+        <button class="btn btn-success">E-commerce</button>
+        <button class="btn btn-primary">Social Network</button>
+        <button class="btn btn-light">Landing Page</button>
+        <button class="btn btn-danger">Blog</button>
     </div>
-
-    <br>
-
-    <a href="{{ path('catalog_index') }}"><button class="btn btn-success" ><i class="fas fa-book-open"></i> See all POC</button></a>
+    <div class="text-right my-2">
+        <a href="{{ path('catalog_index') }}"><button class="btn btn-success" ><i class="fas fa-book-open"></i> See all POC</button></a>
+    </div>
 
     <section id="pocList">
     {% for poc in pocs %}
@@ -31,7 +30,7 @@
     </section>
 
     <p class="text-center">You can't find the missing piece for your incredible project ?</p>
-    <p class="text-center">Please <a href="{{path("contact")}}">contact us</a>.</p>
+    <p class="text-center">Please <a href="{{path("contact")}}">contact us</a>!</p>
 
 
 {% endblock %}
