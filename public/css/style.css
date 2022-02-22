@@ -76,6 +76,11 @@ img{
 
 /* Nav Bar */
 
+#mainNav button{
+    background: none;
+    border: 0;
+}
+
 .displayNone{
     display: none;
 }
@@ -243,6 +248,13 @@ img{
     width: 70%;
 }
 
+@media screen and (max-width: 650px)
+{
+    .formContact{
+        width: 100%;
+    }
+}
+
 .puzzleFloating3{
     width: 30%;
     position: absolute;
@@ -260,6 +272,13 @@ img{
 .divider2{
     display: grid;
     grid-template-columns: 40% 60%;
+}
+
+@media screen and (max-width: 1000px)
+{
+    .divider2{
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Profil - My POC */
