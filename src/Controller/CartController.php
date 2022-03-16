@@ -33,11 +33,11 @@ class CartController extends AbstractController
     /**
      * @Route("/cart/add/{id}", name="cart_add")
      */
-    public function add(CartService $cartService, Poc $poc): Response
+    public function add(CartService $cartService, Poc $poc)
     {
         $cartService->add($poc);
 
-        return $this->redirectToRoute('cart_index');
+        return $this->redirectToRoute('home');
     }
 
     /**
