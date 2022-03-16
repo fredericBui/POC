@@ -10,7 +10,7 @@
             <li class="pr-3"><a href={{path("aboutus")}}>About us</a></li>
         </div>
         <div class="text-right">
-            <a href={{path("cart_index")}}><i class="fas fa-shopping-cart p-1"></i></a>
+            <a href={{path("cart_index")}}>{% if app.session.get('cart')['elements'] is defined %}{{ app.session.get('cart')['elements'] |length }}{% endif %}<i class="fas fa-shopping-cart p-1"></i></a>
             <i id="logoProfil" class="fas fa-user whiteCircle cursorP" onclick="toggleTarget('navprofil', 'diplayNone', 'displayGrid')"></i>
         </div>
     </ul>
