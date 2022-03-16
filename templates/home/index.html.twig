@@ -5,15 +5,15 @@
 {% block body %}
 <h1 class="text-center p-4">The missing piece of your web project!</h1>
 
-<nav>
-    <ul class="grid2">
-        <li class="card p-4 ml-5 mr-4">
+<nav id="homeNav">
+    <ul>
+        <li class="p-4 m-4">
             <a href={{path("catalog_index")}}>
                 <h2 class="text-center">Find</h2>
                 <img  src="{{asset('media/puzzle.png')}}"/>
             </a>
         </li>
-        <li class="card p-4 ml-4 mr-5">
+        <li class="p-4 m-4">
             <a href={{path("profil_myPoc")}}>
                 <h2 class="text-center">Share</h2>
                 <img src="{{asset("/media/puzzle.svg")}}"/>
