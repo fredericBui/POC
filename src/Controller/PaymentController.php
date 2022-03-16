@@ -6,6 +6,7 @@ use App\Entity\Payment;
 use App\Entity\Purchase;
 use App\Repository\PaymentRepository;
 use App\Service\CartService;
+use App\Service\MailerService;
 use App\Service\PaymentService;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
@@ -39,7 +40,7 @@ class PaymentController extends AbstractController
     /**
      * @Route("/payment/success/{stripeSessionId}", name="payment_success")
      */
-    public function success(string $stripeSessionId, EntityManagerInterface $entityManager, CartService $cartService, PaymentRepository $paymentRepository): Response
+    public function success(string $stripeSessionId, EntityManagerInterface $entityManager, CartService $cartService, PaymentRepository $paymentRepository, MailerService $mailer): Response
     {
 
         $paymentRequest = $paymentRepository->findOneBy([
@@ -52,22 +53,24 @@ class PaymentController extends AbstractController
         //$paymentRequest->setValidated(true);
         //$paymentRequest->setPaidAt(new DateTime());
 
-        $order = new Purchase();
-        $order->setCreateAt(new DateTimeImmutable());
-        //$order->setPoc();
-        $order->setBuyer($this->getUser());
-        $order->setReference(strval(rand(1000000,999999999)));
-        $entityManager->persist($order);
+        $purchase = new Purchase();
+        $purchase->setCreateAt(new DateTimeImmutable());
+        //$purchase->setPoc();
+        $purchase->setBuyer($this->getUser());
+        $purchase->setReference(strval(rand(1000000,999999999)));
+        $entityManager->persist($purchase);
+
+        $mailer->sendEmail('contact@apieceofcode.org', $this->getUser()->getEmail(), "Thank You !", "emails/paymentSuccess.html.twig", []);
 
         /*$cart = $cartService->get();
         foreach ($cart['elements'] as $pocId => $element)
         {
             $poc = $pocRepository->find($pocId);
-            $orderedQuantity = new OrderedQuantity();
-            $orderedQuantity->setQuantity($element['quantity']);
-            $orderedQuantity->setPoc($poc);
-            $orderedQuantity->setFromOrder($order);
-            $entityManager->persist($orderedQuantity);
+            $purchaseedQuantity = new purchaseedQuantity();
+            $purchaseedQuantity->setQuantity($element['quantity']);
+            $purchaseedQuantity->setPoc($poc);
+            $purchaseedQuantity->setFrompurchase($purchase);
+            $entityManager->persist($purchaseedQuantity);
 
         };*/
 
