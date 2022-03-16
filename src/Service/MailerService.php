@@ -12,8 +12,6 @@ use Symfony\Component\Mime\Email;
 class MailerService extends AbstractController
 {
     
-    
-    
     private $mailer;
 
     /**
