@@ -4,34 +4,31 @@
 
 {% block body %}
 <div id="cartBody">
-{% if cart.elements %}
+    {% if cart.elements %}
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            {% for element in cart.elements %}
+                <tr>
+                    <td>{{element.poc.name }}</td>
+                    <td>{{element.poc.price }}€</td>
+                    <td><a href="{{ path('cart_remove', {'id': element.poc.id}) }}"><i class="fas fa-trash-alt"></i></a></td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td>Total : {{cart.total}} €</td>
+            </tr>
+        </table>
 
-<table class="table">
-    <tr>
-        <th>Name</th>
-        <th>Quantity</th>
-        <th>Price</th>
-    </tr>
-
-{% for element in cart.elements %}
-    <tr>
-        <td>{{element.poc.name }}</td>
-        <td>{{element.quantity }}</td>
-        <td>{{element.poc.price }}€</td>
-        <td><a href="{{ path('cart_remove', {'id': element.poc.id}) }}"><i class="fas fa-trash-alt"></i></a></td>
-    </tr>
-{% endfor %}
-    <tr>
-        <td>Total : {{cart.total}} €</td>
-    </tr>
-</table>
-
-<a href="{{ path('payment_index') }}"><button class="btn btn-success"><i class="far fa-credit-card"></i> Pay</button></a>
-<a href="{{ path('cart_clear') }}"><button class="btn btn-danger">Clear cart</button></a>
-
-{% else %}
-<p>Cart empty</p>
-<a href="{{ path('catalog_index') }}"><button class="btn btn-primary">Back to the catalog</button></a>
-{% endif %}
+        <div class="text-center">
+            <a href="{{ path('payment_index') }}"><button class="btn btn-success"><i class="far fa-credit-card"></i> Pay</button></a>
+            <a href="{{ path('cart_clear') }}"><button class="btn btn-danger"><i class="fa-solid fa-recycle"></i> Clear cart</button></a>
+        <div>
+    {% else %}
+        <p>Cart empty</p>
+        <a href="{{ path('catalog_index') }}"><button class="btn btn-primary">Back to the catalog</button></a>
+    {% endif %}
 </div>
 {% endblock %}
