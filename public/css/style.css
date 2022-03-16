@@ -347,6 +347,8 @@ img{
 
 #cartBody{
     height: 75vh;
+    background-color: white;
+    margin: 10px;
 }
 
 
