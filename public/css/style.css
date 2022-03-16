@@ -100,6 +100,7 @@ img{
     z-index: 1;
     top: 80px; right: 10px;
     background-color: white;
+    display: none;
 }
 
 .whiteCircle{
@@ -122,6 +123,7 @@ img{
 
 #mainNavMobile{
     background-color: white;
+    display: none;
 }
 
 @media (max-width: 560px) { 
