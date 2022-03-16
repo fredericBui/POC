@@ -18,11 +18,14 @@ class CartService
     // Recherche un panier dans la session
     public function get()
     {
-        return $this->sessionInterface->get('cart', [
+        return $this->sessionInterface->get(
             // Si il n'y a pas de panier retourner le panier par défaut
-            'elements' => [],
-            'total' => 0.0
-        ]);
+            'cart',
+            [
+                'elements' => [],
+                'total' => 0.0,
+            ]
+        );
     }
 
     // Ajoute un poc au panier
@@ -41,15 +44,16 @@ class CartService
                 'poc' => $poc,
                 'quantity' => 0
             ];
+            
+            // Ajoute le prix du POC au total du panier
+            $cart['total'] = $cart['total'] + $poc->getPrice();
+            // Ajoute +1 au nombre d'élément du panier
+            $cart['elements'][$pocId]['quantity'] = $cart['elements'][$pocId]['quantity'] + 1;
+
+            // Enregistre le panier dans la session
+            $this->sessionInterface->set('cart', $cart);
         }
 
-        // Ajoute le prix du POC au total du panier
-        $cart['total'] = $cart['total'] + $poc->getPrice();
-        // Ajoute +1 au nombre d'élément du panier
-        $cart['elements'][$pocId]['quantity'] = $cart['elements'][$pocId]['quantity'] + 1;
-
-        // Enregistre le panier dans la session
-        $this->sessionInterface->set('cart', $cart);
     }
 
     // Supprime un element du panier 
