@@ -4,9 +4,9 @@
 
 {% block body %}
     <h1  class="text-center">POCs</h1>
-    <div class="divider2b text-light">
+    <div class="divider2b">
         {{include('Composants/navAdmin.html.twig')}}
-        <table class="table text-light">
+        <table  id="adminPocIndex" class="table">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -14,7 +14,7 @@
                     <th>ImageFilename</th>
                     <th>GithubLink</th>
                     <th>Author</th>
-                    <th>Actionss</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,5 +43,4 @@
         </table>
     </div>
 
-    <a href="{{ path('admin_poc_new') }}"><button class="btn btn-success">Create new</button></a>
 {% endblock %}

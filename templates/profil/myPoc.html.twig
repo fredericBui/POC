@@ -5,13 +5,12 @@
 {% block body %}
     <h1 class="text-center">My POC</h1>
 
-    <table class="table text-light">
+    <table id="myPoc" class="table">
         <thead>
             <tr class="text-center">
                 <th>Name</th>
-                <th>Image</th>
                 <th>Keywords</th>
-                <th>Premium (1=yes)</th>
+                <th>Premium</th>
                 <th>Price</th>
                 <th>Actions</th>
             </tr>
@@ -20,15 +19,12 @@
         {% for poc in pocs %}
             <tr class="text-center">
                 <td>{{ poc.name }}</td>
-                <td>
-                    <img id="myPocImage" src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="{{ poc.name }}"/>
-                </td>
                 <td>{{ poc.keywords }}</td>
-                <td>{{ poc.isPremium }}</td>
-                <td>{{ poc.price }}</td>
+                <td>{{ poc.isPremium ? 'Yes' : 'No' }} </td>
+                <td>{{ poc.price }}€</td>
                 <td>
-                    <a href="{{path('profil_myPoc_show', {'id': poc.id}) }}"><i class="fas fa-eye text-light"></i></a>
-                    <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}"><i class="fas fa-edit text-light"></i></a>
+                    <a href="{{path('profil_myPoc_show', {'id': poc.id}) }}"><i class="fas fa-eye"></i></a>
+                    <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}"><i class="fas fa-edit"></i></a>
                 </td>
             </tr> 
         {% else %}

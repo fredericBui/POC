@@ -256,6 +256,12 @@ img{
     top: 100px; right: 10px;
 }
 
+/* PSWD reset */
+
+#resetPsdRequest{
+    height: 65vh;
+}
+
 /* Contact */
 .formContact{
     width: 70%;
@@ -295,6 +301,11 @@ img{
 }
 
 /* Profil - My POC */
+
+#myPoc{
+    background-color: white;
+}
+
 #myPocImage{
     height: 100px;
 }
@@ -329,6 +340,10 @@ img{
 .divider2b{
     display: grid;
     grid-template-columns: 15% 80%;
+}
+
+#adminUserIndex, #adminPurchaseIndex, #adminPocIndex, #adminPaymentIndex, #adminLanguageIndex, #adminCategoryIndex{
+    background-color: white;
 }
 
 /* Catalog */

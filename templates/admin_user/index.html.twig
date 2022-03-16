@@ -4,15 +4,15 @@
 
 {% block body %}
     <h1 class="text-center">Users</h1>
-    <div class="divider2b text-light">
+    <div class="divider2b">
         {{include('Composants/navAdmin.html.twig')}}
-        <table class="table text-light">
+        <table id="adminUserIndex" class="table">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Email</th>
                     <th>Pseudo</th>
-                    <th>Actionss</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>

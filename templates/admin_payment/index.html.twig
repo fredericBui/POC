@@ -5,16 +5,16 @@
 {% block body %}
     <h1  class="text-center">Payments</h1>
 
-    <div class="divider2b text-light">
+    <div class="divider2b">
         {{include('Composants/navAdmin.html.twig')}}
-        <table class="table text-light">
+        <table id="adminPaymentIndex" class="table">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Purchase</th>
                     <th>CreateAt</th>
                     <th>StripeSessionId</th>
-                    <th>Actionss</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>

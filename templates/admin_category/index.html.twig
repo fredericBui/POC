@@ -5,9 +5,9 @@
 {% block body %}
     <h1 class="text-center">Categories</h1>
 
-    <div class="divider2b text-light">
+    <div class="divider2b">
         {{include('Composants/navAdmin.html.twig')}}
-        <table class="table text-light">
+        <table id="adminCategoryIndex" class="table">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -33,6 +33,7 @@
         </table>
     </div>
 
-    <p class="text-center text-light">Please check if the category is already use in <a href="{{ path('admin_poc_index')}}">POC</a> before update or delete.</p>
-    <a href="{{ path('admin_category_new') }}"><button class="btn btn-success">Create new</button></a>
+    <p class="text-center">Please check if the category is already use in <a href="{{ path('admin_poc_index')}}">POC</a> before update or delete.</p>
+    <div class="text-center"><a href="{{ path('admin_category_new') }}"><button class="btn btn-success">Create new</button></a></div>
+    <br>
 {% endblock %}
