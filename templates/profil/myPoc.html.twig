@@ -21,7 +21,7 @@
             <tr class="text-center">
                 <td>{{ poc.name }}</td>
                 <td>
-                    <img id="myPocImage"src= "{{ asset('uploads/' ~ poc.imageFilename ) }}"/>
+                    <img id="myPocImage" src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="{{ poc.name }}"/>
                 </td>
                 <td>{{ poc.keywords }}</td>
                 <td>{{ poc.isPremium }}</td>

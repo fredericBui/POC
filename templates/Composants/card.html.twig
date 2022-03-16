@@ -16,7 +16,7 @@
         {% endfor %}
     </div>
     <!--Image-->
-    <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="">
+    <img src="{{ asset('uploads/' ~ poc.imageFilename ) }}" alt="{{ poc.name }}">
     <!--Contenu de la carte-->
     <div class="card-body">
         <!--Partie haute-->
