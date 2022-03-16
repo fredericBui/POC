@@ -181,13 +181,17 @@ img{
 
 /* Home */
 
-.grid2{
+#homeNav ul{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 1%;
 }
 
-.grid2 h2{
+#homeNav li{
+    background-color: white;
+    border-radius: 1em;
+}
+
+#homeNav h2{
     color: black;
 }
 
@@ -203,8 +207,15 @@ img{
     }
 }
 
-@media (max-width: 770px) { 
+@media (max-width: 770px) {
+     
     .grid3{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) { 
+    #homeNav ul{
         grid-template-columns: 1fr;
     }
 }
