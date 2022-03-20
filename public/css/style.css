@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 
 /* 1 - Light mode */
 
@@ -182,6 +187,23 @@ img{
 /* PAGES : */
 
 /* Home */
+
+#homeNav2 ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#find{
+    background-color: rgb(14, 53, 53);
+}
+
+#share{
+    background-color: rgb(36, 88, 105);
+}
+
+#homeNav2 a{
+    text-decoration: none;
+}
 
 #homeNav ul{
     display: grid;
