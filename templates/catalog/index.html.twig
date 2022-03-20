@@ -12,10 +12,12 @@
     </form>
 
     <div class="text-center my-2">
-        <button class="btn btn-success">E-commerce</button>
-        <button class="btn btn-primary">Social Network</button>
-        <button class="btn btn-light">Landing Page</button>
-        <button class="btn btn-danger">Blog</button>
+        <form>
+            <button class="btn btn-success" name="category" value="E-commerce" type="submit">E-commerce</button>
+            <button class="btn btn-primary" name="category" value="Social Network" type="submit">Social Network</button>
+            <button class="btn btn-light" name="category" value="Landing Page" type="submit">Landing Page</button>
+            <button class="btn btn-danger" name="category" value="Blog" type="submit">Blog</button>
+        </form>
     </div>
     <div class="text-right my-2">
         <a href="{{ path('catalog_index') }}"><button class="btn btn-success" ><i class="fas fa-book-open"></i> See all POC</button></a>

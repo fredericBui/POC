@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Category;
 use App\Entity\Poc;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -19,7 +20,6 @@ class PocRepository extends ServiceEntityRepository
         parent::__construct($registry, Poc::class);
     }
 
-    // TODO: A voir
     public function findByText(string $term)
     {
         return $this->createQueryBuilder('p')
@@ -28,6 +28,15 @@ class PocRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult()
         ;
+    }
+
+    public function getCategory(Category $category)
+    {
+        $qb = $this->createQueryBuilder("p")
+            ->where(':category MEMBER OF p.categories')
+            ->setParameters(array('category' => $category))
+        ;
+        return $qb->getQuery()->getResult();
     }
 
     // /**
