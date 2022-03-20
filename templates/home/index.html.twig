@@ -5,18 +5,18 @@
 {% block body %}
 <h1 class="text-center p-4">The missing piece of your web project!</h1>
 
-<nav id="homeNav">
+<nav id="homeNav2">
     <ul>
-        <li class="p-4 m-4">
+        <li id="find" class="p-4">
             <a href={{path("catalog_index")}}>
                 <h2 class="text-center">Find</h2>
-                <img  src="{{asset('media/puzzle.png')}}" alt="find"/>
+                <img  src="{{asset('media/logoFind.svg')}}" alt="find"/>
             </a>
         </li>
-        <li class="p-4 m-4">
+        <li id="share" class="p-4">
             <a href={{path("profil_myPoc")}}>
                 <h2 class="text-center">Share</h2>
-                <img src="{{asset("/media/puzzle.svg")}}" alt="share"/>
+                <img src="{{asset("/media/logoShare.svg")}}" alt="share"/>
             </a>
         </li>
     </ul>
