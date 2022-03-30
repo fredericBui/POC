@@ -41,18 +41,7 @@ class CatalogController extends AbstractController
                 // On retrouve les mêmes méthodes que j'expliquerais dans les repository
                 'pocs' => $pocRepository->findAll(),
             ]);
-        }
-        
-    }
-   
-    /**
-     * @Route("/show/{id}", name="catalog_show", methods={"GET"})
-     */
-    public function show(Poc $poc): Response
-    {
-        return $this->render('catalog/show.html.twig', [
-            'poc' => $poc,
-        ]);
+        }   
     }
 
 }
