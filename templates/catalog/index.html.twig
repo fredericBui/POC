@@ -5,12 +5,13 @@
 {% block body %}
     <h1 class="text-center">POC catalog</h1>
 
-    <!--Search bar-->
+    <!--Barre de recherche-->
     <form id="searchBar" class="m-3" method="get" action="{{ path('catalog_index') }}">
         <button class="btn" type="submit"><i class="fas fa-search"></i></button>
         <input id="searchInput" type="text" placeholder="Search by keywords" name="keyword"/>
     </form>
 
+    <!--Bouton filtrage des POCs-->
     <div class="text-center my-2">
         <form>
             <button class="btn btn-success" name="category" value="E-commerce" type="submit">E-commerce</button>
@@ -19,20 +20,25 @@
             <button class="btn btn-danger" name="category" value="Blog" type="submit">Blog</button>
         </form>
     </div>
+
+    <!--Bouton affichage de tous les POCs-->
     <div class="text-right my-2">
         <a href="{{ path('catalog_index') }}"><button class="btn btn-success" ><i class="fas fa-book-open"></i> See all POC</button></a>
     </div>
 
+    <!--Affichage des cartes POCs-->
     <section id="pocList">
-    {% for poc in pocs %}
-        {{include("Composants/card.html.twig")}}
-    {% else %}
-        <p>No records found</p>
-    {% endfor %}
+        {% for poc in pocs %}
+            {{include("Composants/card.html.twig")}}
+        {% else %}
+            <p>No records found</p>
+        {% endfor %}
     </section>
 
+    <!--Message-->
     <p class="text-center">You can't find the missing piece for your incredible project ?</p>
-    <p class="text-center">Please <a href="{{path("contact")}}">contact us</a>!</p>
 
+    <!--Lien vers contact-->
+    <p class="text-center">Please <a href="{{path("contact")}}">contact us</a>!</p>
 
 {% endblock %}

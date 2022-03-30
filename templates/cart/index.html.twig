@@ -4,12 +4,18 @@
 
 {% block body %}
 <div id="cartBody">
+
+    <!--Affichage si le panier comporte un élément-->
     {% if cart.elements %}
+
+        <!--Affichage du panier-->
         <table class="table">
             <tr>
                 <th>Name</th>
                 <th>Price</th>
             </tr>
+
+            <!--Parcours et affiche les éléments enregistrées dans la session cart-->
             {% for element in cart.elements %}
                 <tr>
                     <td>{{element.poc.name }}</td>
@@ -17,18 +23,34 @@
                     <td><a href="{{ path('cart_remove', {'id': element.poc.id}) }}"><i class="fas fa-trash-alt"></i></a></td>
                 </tr>
             {% endfor %}
+
+            <!--Affiche le total du cart-->
             <tr>
                 <td>Total : {{cart.total}} €</td>
             </tr>
-        </table>
+        </table>    
 
         <div class="text-center">
-            <a href="{{ path('payment_index') }}"><button class="btn btn-success"><i class="far fa-credit-card"></i> Pay</button></a>
-            <a href="{{ path('cart_clear') }}"><button class="btn btn-danger"><i class="fa-solid fa-recycle"></i> Clear cart</button></a>
+
+            <!--Lien vers payment-->
+            <a href="{{ path('payment_index') }}">
+                <button class="btn btn-success"><i class="far fa-credit-card"></i> Pay</button>
+            </a>
+        
+            <!--Lien vers vider le panier-->
+            <a href="{{ path('cart_clear') }}">
+                <button class="btn btn-danger"><i class="fa-solid fa-recycle"></i> Clear cart</button>
+            </a>
         <div>
+
+    <!--Affichage en cas de panier vide-->
     {% else %}
         <p>Cart empty</p>
-        <a href="{{ path('catalog_index') }}"><button class="btn btn-primary">Back to the catalog</button></a>
+
+        <!--Lien vers le catalogue-->
+        <a href="{{ path('catalog_index') }}">
+            <button class="btn btn-primary">Back to the catalog</button>
+        </a>
     {% endif %}
 </div>
 {% endblock %}

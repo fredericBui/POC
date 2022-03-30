@@ -1,9 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PaymentController!{% endblock %}
+{% block title %}Payment success{% endblock %}
 
 {% block body %}
+    <!--Affichage paiement réussi-->
     <h1>Thank you ! Payment success</h1>
     <p>We will send you the Github link to your email soon.</p>
+    
+    <!--Lien vers page d'accueil-->
     <a href={{path('home')}}>Back to home page</a>
 {% endblock %}

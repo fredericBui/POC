@@ -4,27 +4,38 @@
 
 {% block body %}
 <div id="loginBody">
+    <!--Formulaire de connexion-->
     <form method="post">
+
+        <!--Message en cas d'erreur-->
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
 
+        <!--Message si un utilisateur est déjà connecté-->
         {% if app.user %}
             <div class="mb-3">
                 You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
             </div>
         {% endif %}
 
+
         <h1 class="text-center mt-5">Login</h1>
+
+        <!--Image flottante-->
         <img class="puzzleFloating2" src="{{asset('media/puzzle.svg')}}" alt="apieceofcode"/>
+        
         <div id="formLogin" class="text-center">
+            <!--Champs Email-->
             <label for="inputEmail">Email</label>
             <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
             <br/>
+            <!--Champs Password-->
             <label for="inputPassword">Password</label>
             <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
             <br/>
 
+            <!--Jeton CSRF-->
             <input type="hidden" name="_csrf_token"
                 value="{{ csrf_token('authenticate') }}"
             >
@@ -40,6 +51,7 @@
                 </div>
             #}
 
+            <!--Bouton envoie du formulaire-->
             <button class="btn btn-primary" type="submit">
                 Sign in
             </button>

@@ -3,14 +3,25 @@
         <!--Nav Horizontale-->
         <button id="burgerButton" class="m-1"><i class="fas fa-bars"></i></button>
         <div id="link">
+            <!--Lien logo vers page Home, -->
             <li id="navLogo" class="pr-3"><a href={{path("home")}}><i class="fas fa-puzzle-piece" style="color:rgb(250, 218, 76)"></i> P.O.C.</a></li>
+            <!--Lien vers pages : Home, Catalog, Contact et About Us-->
             <li class="pr-3"><a href={{path("home")}}>Home</a></li>
             <li class="pr-3"><a href={{path("catalog_index")}}>Catalog</a></li>
             <li class="pr-3"><a href={{path("contact")}}>Contact</a></li>
             <li class="pr-3"><a href={{path("aboutus")}}>About us</a></li>
         </div>
         <div class="text-right">
-            <a href={{path("cart_index")}}>{% if app.session.get('cart')['elements'] is defined %}{{ app.session.get('cart')['elements'] |length }}{% endif %}<i class="fas fa-shopping-cart p-1"></i></a>
+            <!--Lien vers panier-->
+            <a href={{path("cart_index")}}>
+                <!--Affichage du nombre d'élément dans le panier-->
+                {% if app.session.get('cart')['elements'] is defined %}
+                    {{ app.session.get('cart')['elements'] |length }}
+                {% endif %}
+                <!--Logo panier-->
+                <i class="fas fa-shopping-cart p-1"></i>
+            </a>
+            <!--Logo profil toggle navProfil-->
             <i id="logoProfil" class="fas fa-user whiteCircle cursorP" onclick="toggleTarget('navprofil', 'diplayNone', 'displayGrid')"></i>
         </div>
     </ul>
@@ -19,6 +30,7 @@
 <!--Nav Mobile-->
 <nav>
     <ul id="mainNavMobile" class="text-center">
+        <!--Lien vers pages : Home, Catalog, Contact et About us-->
         <li class="pr-3"><a href={{path("home")}}>Home</a></li>
         <li class="pr-3"><a href={{path("catalog_index")}}>Catalog</a></li>
         <li class="pr-3"><a href={{path("contact")}}>Contact</a></li>
@@ -29,27 +41,32 @@
 <!--Nav Profil-->
 <nav id="navprofil"> 
     <ul class="text-center p-2">
-        <!--Pseudo User-->
+
+        <!--Affichage Pseudo User si connecté-->
         {% if app.user %}
             <li><p> Hi {{app.user.pseudo }} ! 😊</p></li>
             <hr>
         {% endif %}
-        <!--User Profil-->
+
+        <!--Liens reservé aux utilisateurs-->
         {% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN') == false %}
             <li><a href={{ path('profil_show') }}><p>My profil</p></a></li>
             <li><a href={{ path('profil_myPoc') }}><p>My POC</p></a></li>
             <li><a href={{ path('app_logout') }}><p>Log out</p></a></li>
-        <!--Admin Profil-->
+        
+        <!--Liens reservé aux administrateurs-->
         {% elseif is_granted('ROLE_ADMIN') %}
             <li><a href={{ path('admin_user_index') }}><p>Admin</p></a></li>
             <li><a href={{ path('profil_myPoc') }}><p>My POC</p></a></li>
             <li><a href={{ path('app_logout') }}><p>Log out</p></a></li>
-        <!--Visitor Profil-->
+        
+        <!--Liens reservé aux visiteurs-->
         {% else %}
             <li><a href={{path("app_login")}}><p>Login</p></a></li>
             <li><a href={{path("app_register")}}><p>Register</p></a></li>
         {% endif %}
         <hr>
+        
         <li><p onclick="darkMode()"><i class="fas fa-moon"></i> Dark Mode</p></li>
     </ul>
 </nav>

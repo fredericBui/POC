@@ -4,8 +4,12 @@
 
 {% block body %}
 <h1 class="mt-5">Contact us !</h1>
+
+<!--Image flotante-->
 <img class="puzzleFloating3" src="{{asset('media/puzzle.svg')}}" alt="apieceofcode"/>
+
+<!--Importation du formulaire de contact-->
 <div class="formContact mt-5 mb-5 text-light">
-{{ include('contact/_form.html.twig', {'button_label': 'Send'}) }}
+    {{ include('contact/_form.html.twig', {'button_label': 'Send'}) }}
 </div>
 {% endblock %}

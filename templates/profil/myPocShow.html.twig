@@ -10,12 +10,21 @@
         {{include('Composants/card.html.twig')}}
 
         <div class="divider3 p-3">
-            <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}"><button class="btn btn-success"><i class="fas fa-edit"></i> Edit</button></a>
+            <!--Lien vers édition du POC-->
+            <a href="{{ path('profil_myPoc_edit', {'id': poc.id}) }}">
+                <button class="btn btn-success"><i class="fas fa-edit"></i> Edit</button>
+            </a>
 
+            <!--Inclusion du formulaire de suppression de POC-->
             {{ include('profil/_delete_form.html.twig') }}
         </div>
-        <div class="text-center pb-3"><a href="{{ path('profil_myPoc') }}"><button class="btn btn-primary">Back to my POC</button></a></div>
-        
+
+        <div class="text-center pb-3">
+            <!--Lien vers POCs du profil-->
+            <a href="{{ path('profil_myPoc') }}">
+                <button class="btn btn-primary">Back to my POC</button>
+            </a>
+        </div>
     </div>
 
 

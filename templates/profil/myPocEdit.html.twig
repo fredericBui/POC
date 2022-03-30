@@ -5,11 +5,16 @@
 {% block body %}
     <h1 class="text-center">Edit {{poc.name}}</h1>
 
+    <!--Formulaire d'édition d'un poc-->
     <div class="text-light box4 card grey p-5">
         {{ include('profil/_form.html.twig', {'button_label': 'Update'}) }}
     </div>
-    
 
-    <div class="text-center m-4"><a href="{{ path('profil_myPoc') }}"><button class="btn btn-primary">Back to my POC</button></a></div>
+    <div class="text-center m-4">
+        <!--Lien vers POC du profil-->
+        <a href="{{ path('profil_myPoc') }}">
+            <button class="btn btn-primary">Back to my POC</button>
+        </a>
+    </div>
 
 {% endblock %}

@@ -4,12 +4,17 @@
 
 {% block body %}
 <div id="registerBody">
+
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
     <h1>Register</h1>
+    
+    <!--Image flottante-->
     <img class="puzzleFloating" src="{{asset('media/puzzle.svg')}}" alt="apieceofcode"/>
+
+    <!--Formulaire d'inscription-->
     <div id="registerForm">
     {{ form_start(registrationForm, {'attr': {'class': 'foo'}}) }}
         {{ form_row(registrationForm.pseudo , {'attr': {'class': 'foo2'}}) }}
@@ -17,8 +22,12 @@
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
+        
+        <!--Lien vers politique de confidentialité-->
         <a href={{path("politique_de_confidentialite")}}>Privacy Policy</a>
         {{ form_row(registrationForm.agreeTerms) }}
+
+        <!--Bouton envoie du formulaire-->
         <button class="btn btn-success" type="submit">Register</button><br/>
     {{ form_end(registrationForm) }}
     </div>

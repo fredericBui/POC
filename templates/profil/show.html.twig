@@ -5,6 +5,7 @@
 {% block body %}
     <h1>User</h1>
 
+    <!--Affichage de l'utilisateur-->
     <table class="table">
         <tbody>
             <tr>
@@ -22,7 +23,12 @@
         </tbody>
     </table>
 
-    <a href="{{ path('profil_edit') }}"><button class="btn btn-success">edit</button></a>
+    <!--Lien vers édition du profil-->
+    <a href="{{ path('profil_edit') }}">
+        <button class="btn btn-success">edit</button>
+    </a>
+    
+    <!--Lien vers page contact-->
     <p>Please <a href="{{ path('contact') }}">contact</a> admin if you want to delete your account</p>
 
 {% endblock %}

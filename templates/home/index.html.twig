@@ -5,6 +5,7 @@
 {% block body %}
 <h1 class="text-center p-4">The missing piece of your web project!</h1>
 
+<!--Liens vers catalog et les poc du profil-->
 <nav id="homeNav2">
     <ul>
         <li id="find" class="p-4">
@@ -24,11 +25,12 @@
 
 <h2 class="text-center">Famous pieces of code</h2>
 
+<!--Affichage des cartes POCs-->
 <section class="grid3">
-{% for poc in pocs %}
-    {{include("Composants/card.html.twig")}}
-{% else %}
-    <p>No records found</p>
-{% endfor %}
+    {% for poc in pocs %}
+        {{include("Composants/card.html.twig")}}
+    {% else %}
+        <p>No records found</p>
+    {% endfor %}
 </section>
 {% endblock %}

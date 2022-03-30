@@ -7,8 +7,12 @@
 
     {{ include('profil/_form.html.twig', {'button_label': 'Update'}) }}
 
+    <!--Lien vers réinitialisation de mot de passe-->
     <a href="{{path('app_forgot_password_request')}}" >Reset my password</a>
 
-    <a href="{{ path('profil_show') }}"><button class="btn btn-primary">back to profil</button></a>
+    <!--Lien vers le profil-->
+    <a href="{{ path('profil_show') }}">
+        <button class="btn btn-primary">back to profil</button>
+    </a>
 
 {% endblock %}

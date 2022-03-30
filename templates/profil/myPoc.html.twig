@@ -5,6 +5,7 @@
 {% block body %}
     <h1 class="text-center">My POC</h1>
 
+    <!--Affichage de la table POCs-->
     <table id="myPoc" class="table">
         <thead>
             <tr class="text-center">
@@ -35,6 +36,11 @@
         </tbody>
     </table>
 
-    <div class="text-center p-4"><a href={{path("profil_addPoc")}}><button class="btn btn-success pr-5 pl-5">Create new</button></a></div>
+    <div class="text-center p-4">
+        <!--Lien vers ajouter un POC-->
+        <a href={{path("profil_addPoc")}}>
+            <button class="btn btn-success pr-5 pl-5">Create new</button>
+        </a>
+    </div>
 
 {% endblock %}

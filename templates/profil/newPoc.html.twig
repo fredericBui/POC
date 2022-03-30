@@ -5,9 +5,15 @@
 {% block body %}
     <h1 class="text-center">Create new Poc</h1>
 
+    <!--Inclusion du formulaire POC-->
     <div class="text-light box4 card grey p-5">
         {{ include('profil/_form.html.twig') }}
     </div>
 
-    <div class="text-center m-4"><a href="{{ path('profil_myPoc') }}"><button class="btn btn-primary">back to my Poc</button></a></div>
+    <div class="text-center m-4">
+        <!--Lien ver POC du profil-->
+        <a href="{{ path('profil_myPoc') }}">
+            <button class="btn btn-primary">back to my Poc</button>
+        </a>
+    </div>
 {% endblock %}
