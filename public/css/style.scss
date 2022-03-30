@@ -1,0 +1,405 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 1 - Light mode */
+
+.text-light{
+    color: rgba(229, 229, 229, 1);
+}
+
+.light{
+    background-color: white;
+}
+
+.lightSubNav{
+    background-color: rgb(52, 96, 110);
+}
+
+.lightBody{
+    background-color: rgba(53, 75, 89, 1);
+}
+
+/* 2 - Dark mode */
+
+.darkSubNav{
+    background-color: rgb(58, 58, 58);
+}
+
+.darkBody{
+    background-color: rgb(75, 75, 75);
+}
+
+.flex{
+    display: flex;
+}
+
+
+/* This CSS is divide in 4 parts : General, Composants, Pages and Responsive */
+/* Bootstrap class use in this project : all m, all p*/
+
+/* GENERAL */
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer{
+    background-color: rgb(109, 109, 109);
+    p{
+        color: black;
+    }
+}
+
+ul li{
+    display: block;
+}
+
+a{
+    font-weight:500;
+    color:black;
+}
+
+.t-right {
+    text-align: right;
+}
+
+h1, h2, h3, p, ol li{
+    color: rgba(229, 229, 229, 1);
+}
+
+img{
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* COMPOSANTS */
+
+/* Nav Bar */
+
+.displayNone{
+    display: none;
+}
+
+.displayGrid{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.cursorP{
+    cursor: pointer;
+}
+
+#navprofil{
+    width: 200px;
+    position: absolute;
+    z-index: 1;
+    top: 80px; right: 10px;
+    background-color: white;
+    display: none;
+    ul li p{
+        color: black;
+    }
+}
+
+.whiteCircle{
+    background-color: rgb(58, 58, 58);
+    color: white;
+    border-radius: 2em;
+    padding: 0.5em;
+}
+
+#mainNav{
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    padding: 1%;
+    background-color: white;
+    button{
+        display: none;
+        background: none;
+        border: 0;
+    }
+    #link{
+        display: flex;
+    }
+}
+
+#mainNavMobile{
+    background-color: white;
+    display: none;
+}
+
+@media (max-width: 560px) { 
+
+    #mainNav{
+        display: grid;
+        grid-template-columns: 1fr 5fr 2fr;
+        button{
+            display: block;
+        }
+        #navLogo{
+            display: block;
+        }
+    }
+
+    #link li{
+        display: none;
+    }
+}
+
+/* Card */
+.gridCard{ 
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.floatingCategory{
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    top: 10px; left: 10px;
+}
+
+.categoryCircle{
+    background-color: aliceblue;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+    border-radius: 1em;
+}
+
+#POCcard p{
+    color: black;
+}
+
+/* PAGES : */
+
+/* Home */
+
+#homeNav2{
+    ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    a{
+        text-decoration: none;
+    }
+}
+
+#find{
+    background-color: rgb(14, 53, 53);
+}
+
+#share{
+    background-color: rgb(36, 88, 105);
+}
+
+/* A Supprimer ? */
+#homeNav{
+    ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    li{
+        background-color: white;
+        border-radius: 1em;
+    }
+    h2{
+        color: black;
+    }
+}
+
+/* ---- */
+
+.grid3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1%;
+}
+
+@media (max-width: 1000px) { 
+    .grid3{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 770px) {
+     
+    .grid3{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) { 
+    #homeNav ul{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Login*/
+#loginBody{
+    height: 70vh;
+}
+
+#formLogin{
+    color: white;
+    width: 50%;
+    margin: auto;
+}
+
+.puzzleFloating2{
+    width: 20%;
+    position: absolute;
+    z-index: -1;
+    top: 100px; right: 10px;
+}
+
+/* Registration*/
+#registerBody{
+    height: 80vh;
+}
+
+#registerForm{
+    width: 70%;
+    color: white;
+}
+.puzzleFloating{
+    width: 30%;
+    position: absolute;
+    z-index: -1;
+    top: 100px; right: 10px;
+}
+
+/* PSWD reset */
+
+#resetPsdRequest{
+    height: 65vh;
+}
+
+/* Contact */
+.formContact{
+    width: 70%;
+}
+
+@media screen and (max-width: 650px)
+{
+    .formContact{
+        width: 100%;
+    }
+}
+
+.puzzleFloating3{
+    width: 30%;
+    position: absolute;
+    z-index: -1;
+    top: 10px; right: 10px;
+    transform: rotate(-20deg);
+}
+
+/* About us */
+.box2{
+    width: 80%;
+    margin: auto;
+}
+
+.divider2{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+@media screen and (max-width: 1000px)
+{
+    .divider2{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Profil - My POC */
+
+#myPoc{
+    background-color: white;
+}
+
+#myPocImage{
+    height: 100px;
+}
+
+/* Profil - My POC show */
+
+.box3{
+    width: 50%;
+    margin: auto;
+}
+
+.divider3{
+    display: flex;
+    margin: auto;
+    width: 40%;
+    justify-content:space-around;
+}
+
+.grey{
+    background-color: rgb(39, 59, 71);
+}
+
+/* Profil - My POC edit */
+
+.box4{
+    width: 80%;
+    margin: auto;
+}
+
+/* Admin User index*/
+
+.divider2b{
+    display: grid;
+    grid-template-columns: 15% 80%;
+}
+
+#adminUserIndex, #adminPurchaseIndex, #adminPocIndex, #adminPaymentIndex, #adminLanguageIndex, #adminCategoryIndex{
+    background-color: white;
+}
+
+/* Catalog */
+
+#searchBar{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    padding: 1%;
+    background-color: white;
+    border-radius: 2em;
+}
+
+#searchInput{   
+    border:none;
+}
+
+/* Cart */
+
+#cartBody{
+    height: 75vh;
+    background-color: white;
+    margin: 10px;
+}
+
+@media (min-width: 700px) { 
+    #pocList{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+    }
+
+    #searchBar{
+        grid-template-columns: 5% 95%;
+    }
+}
+
+
+@media (min-width: 1000px) { 
+    #pocList{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

@@ -1,413 +1,429 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-
 
 /* 1 - Light mode */
-
-.text-light{
-    color: rgba(229, 229, 229, 1);
+.text-light {
+  color: #e5e5e5;
 }
 
-.light{
-    background-color: white;
+.light {
+  background-color: white;
 }
 
-.lightSubNav{
-    background-color: rgb(52, 96, 110);
+.lightSubNav {
+  background-color: #34606e;
 }
 
-.lightBody{
-    background-color: rgba(53, 75, 89, 1);
+.lightBody {
+  background-color: #354b59;
 }
 
 /* 2 - Dark mode */
-
-.darkSubNav{
-    background-color: rgb(58, 58, 58);
+.darkSubNav {
+  background-color: #3a3a3a;
 }
 
-.darkBody{
-    background-color: rgb(75, 75, 75);
+.darkBody {
+  background-color: #4b4b4b;
 }
 
-.flex{
-    display: flex;
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-
 
 /* This CSS is divide in 4 parts : General, Composants, Pages and Responsive */
 /* Bootstrap class use in this project : all m, all p*/
-
 /* GENERAL */
-
-body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-footer{
-    background-color: rgb(109, 109, 109);
+footer {
+  background-color: #6d6d6d;
 }
 
-footer p{
-    color: black;
+footer p {
+  color: black;
 }
 
-ul li{
-    display: block;
+ul li {
+  display: block;
 }
 
-a{
-    font-weight:500;
-    color:black;
+a {
+  font-weight: 500;
+  color: black;
 }
 
 .t-right {
-    text-align: right;
+  text-align: right;
 }
 
-h1, h2, h3, p, ol li{
-    color: rgba(229, 229, 229, 1);
+h1, h2, h3, p, ol li {
+  color: #e5e5e5;
 }
 
-img{
-    width: 100%;
-    padding: 5px;
-    border-radius: 10px;
+img {
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 /* COMPOSANTS */
-
 /* Nav Bar */
-
-#mainNav button{
-    background: none;
-    border: 0;
+.displayNone {
+  display: none;
 }
 
-.displayNone{
-    display: none;
+.displayGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
 }
 
-.displayGrid{
+.cursorP {
+  cursor: pointer;
+}
+
+#navprofil {
+  width: 200px;
+  position: absolute;
+  z-index: 1;
+  top: 80px;
+  right: 10px;
+  background-color: white;
+  display: none;
+}
+
+#navprofil ul li p {
+  color: black;
+}
+
+.whiteCircle {
+  background-color: #3a3a3a;
+  color: white;
+  border-radius: 2em;
+  padding: 0.5em;
+}
+
+#mainNav {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4fr 2fr;
+      grid-template-columns: 4fr 2fr;
+  padding: 1%;
+  background-color: white;
+}
+
+#mainNav button {
+  display: none;
+  background: none;
+  border: 0;
+}
+
+#mainNav #link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#mainNavMobile {
+  background-color: white;
+  display: none;
+}
+
+@media (max-width: 560px) {
+  #mainNav {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: 1fr;
-}
-
-.cursorP{
-    cursor: pointer;
-}
-
-#navprofil{
-    width: 200px;
-    position: absolute;
-    z-index: 1;
-    top: 80px; right: 10px;
-    background-color: white;
-    display: none;
-}
-
-.whiteCircle{
-    background-color: rgb(58, 58, 58);
-    color: white;
-    border-radius: 2em;
-    padding: 0.5em;
-}
-
-#mainNav{
-    display: grid;
-    grid-template-columns: 4fr 2fr;
-    padding: 1%;
-    background-color: white;
-}
-
-#mainNav button{
-    display: none;
-}
-
-#mainNavMobile{
-    background-color: white;
-    display: none;
-}
-
-@media (max-width: 560px) { 
-
-    #mainNav{
-        display: grid;
+    -ms-grid-columns: 1fr 5fr 2fr;
         grid-template-columns: 1fr 5fr 2fr;
-    }
-
-    #mainNav button{
-        display: block;
-    }
-
-    #mainNav #navLogo{
-        display: block;
-    }
-
-    #link li{
-        display: none;
-    }
-}
-
-#mainNav #link{
-    display: flex;
-}
-
-#navprofil ul li p{
-    color: black;
+  }
+  #mainNav button {
+    display: block;
+  }
+  #mainNav #navLogo {
+    display: block;
+  }
+  #link li {
+    display: none;
+  }
 }
 
 /* Card */
-.gridCard{ 
-    display: grid;
-    grid-template-columns: 3fr 1fr;
+.gridCard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
 }
 
-.floatingCategory{
-    display: flex;
-    position: absolute;
-    z-index: 1;
-    top: 10px; left: 10px;
+.floatingCategory {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
 }
 
-.categoryCircle{
-    background-color: aliceblue;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 5px;
-    border-radius: 1em;
+.categoryCircle {
+  background-color: aliceblue;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+  border-radius: 1em;
 }
 
-#POCcard p{
-    color: black;
+#POCcard p {
+  color: black;
 }
 
 /* PAGES : */
-
 /* Home */
-
-#homeNav2 ul{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+#homeNav2 ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 }
 
-#find{
-    background-color: rgb(14, 53, 53);
+#homeNav2 a {
+  text-decoration: none;
 }
 
-#share{
-    background-color: rgb(36, 88, 105);
+#find {
+  background-color: #0e3535;
 }
 
-#homeNav2 a{
-    text-decoration: none;
+#share {
+  background-color: #245869;
 }
 
-#homeNav ul{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+/* A Supprimer ? */
+#homeNav ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 }
 
-#homeNav li{
-    background-color: white;
-    border-radius: 1em;
+#homeNav li {
+  background-color: white;
+  border-radius: 1em;
 }
 
-#homeNav h2{
-    color: black;
+#homeNav h2 {
+  color: black;
 }
 
-.grid3{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 1%;
+/* ---- */
+.grid3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  padding: 1%;
 }
 
-@media (max-width: 1000px) { 
-    .grid3{
+@media (max-width: 1000px) {
+  .grid3 {
+    -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-    }
+  }
 }
 
 @media (max-width: 770px) {
-     
-    .grid3{
+  .grid3 {
+    -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    }
+  }
 }
 
-@media (max-width: 500px) { 
-    #homeNav ul{
+@media (max-width: 500px) {
+  #homeNav ul {
+    -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    }
+  }
 }
 
 /* Login*/
-#loginBody{
-    height: 70vh;
+#loginBody {
+  height: 70vh;
 }
 
-#formLogin{
-    color: white;
-    width: 50%;
-    margin: auto;
+#formLogin {
+  color: white;
+  width: 50%;
+  margin: auto;
 }
 
-.puzzleFloating2{
-    width: 20%;
-    position: absolute;
-    z-index: -1;
-    top: 100px; right: 10px;
+.puzzleFloating2 {
+  width: 20%;
+  position: absolute;
+  z-index: -1;
+  top: 100px;
+  right: 10px;
 }
 
 /* Registration*/
-#registerBody{
-    height: 80vh;
+#registerBody {
+  height: 80vh;
 }
 
-#registerForm{
-    width: 70%;
-    color: white;
+#registerForm {
+  width: 70%;
+  color: white;
 }
-.puzzleFloating{
-    width: 30%;
-    position: absolute;
-    z-index: -1;
-    top: 100px; right: 10px;
+
+.puzzleFloating {
+  width: 30%;
+  position: absolute;
+  z-index: -1;
+  top: 100px;
+  right: 10px;
 }
 
 /* PSWD reset */
-
-#resetPsdRequest{
-    height: 65vh;
+#resetPsdRequest {
+  height: 65vh;
 }
 
 /* Contact */
-.formContact{
-    width: 70%;
+.formContact {
+  width: 70%;
 }
 
-@media screen and (max-width: 650px)
-{
-    .formContact{
-        width: 100%;
-    }
+@media screen and (max-width: 650px) {
+  .formContact {
+    width: 100%;
+  }
 }
 
-.puzzleFloating3{
-    width: 30%;
-    position: absolute;
-    z-index: -1;
-    top: 10px; right: 10px;
-    transform: rotate(-20deg);
+.puzzleFloating3 {
+  width: 30%;
+  position: absolute;
+  z-index: -1;
+  top: 10px;
+  right: 10px;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
 }
 
 /* About us */
-.box2{
-    width: 80%;
-    margin: auto;
+.box2 {
+  width: 80%;
+  margin: auto;
 }
 
-.divider2{
-    display: grid;
-    grid-template-columns: 40% 60%;
+.divider2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 60%;
+      grid-template-columns: 40% 60%;
 }
 
-@media screen and (max-width: 1000px)
-{
-    .divider2{
+@media screen and (max-width: 1000px) {
+  .divider2 {
+    -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    }
+  }
 }
 
 /* Profil - My POC */
-
-#myPoc{
-    background-color: white;
+#myPoc {
+  background-color: white;
 }
 
-#myPocImage{
-    height: 100px;
+#myPocImage {
+  height: 100px;
 }
 
 /* Profil - My POC show */
-
-.box3{
-    width: 50%;
-    margin: auto;
+.box3 {
+  width: 50%;
+  margin: auto;
 }
 
-.divider3{
-    display: flex;
-    margin: auto;
-    width: 40%;
-    justify-content:space-around;
+.divider3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  width: 40%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.grey{
-    background-color: rgb(39, 59, 71);
+.grey {
+  background-color: #273b47;
 }
 
 /* Profil - My POC edit */
-
-.box4{
-    width: 80%;
-    margin: auto;
+.box4 {
+  width: 80%;
+  margin: auto;
 }
 
 /* Admin User index*/
-
-.divider2b{
-    display: grid;
-    grid-template-columns: 15% 80%;
+.divider2b {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% 80%;
+      grid-template-columns: 15% 80%;
 }
 
-#adminUserIndex, #adminPurchaseIndex, #adminPocIndex, #adminPaymentIndex, #adminLanguageIndex, #adminCategoryIndex{
-    background-color: white;
+#adminUserIndex, #adminPurchaseIndex, #adminPocIndex, #adminPaymentIndex, #adminLanguageIndex, #adminCategoryIndex {
+  background-color: white;
 }
 
 /* Catalog */
-
-#searchBar{
-    display: grid;
-    grid-template-columns: 10% 90%;
-    padding: 1%;
-    background-color: white;
-    border-radius: 2em;
+#searchBar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 90%;
+      grid-template-columns: 10% 90%;
+  padding: 1%;
+  background-color: white;
+  border-radius: 2em;
 }
 
-#searchInput{   
-    border:none;
+#searchInput {
+  border: none;
 }
 
 /* Cart */
-
-#cartBody{
-    height: 75vh;
-    background-color: white;
-    margin: 10px;
+#cartBody {
+  height: 75vh;
+  background-color: white;
+  margin: 10px;
 }
 
-
-/* RESPONSIVE : */
-
-@media (min-width: 700px) { 
-    #pocList{
-        display: grid;
-        grid-template-columns: 1fr 1fr ;
-    }
-
-    #searchBar{
+@media (min-width: 700px) {
+  #pocList {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  #searchBar {
+    -ms-grid-columns: 5% 95%;
         grid-template-columns: 5% 95%;
-    }
+  }
 }
 
-
-@media (min-width: 1000px) { 
-    #pocList{
-        display: grid;
+@media (min-width: 1000px) {
+  #pocList {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-    }
+  }
 }
+/*# sourceMappingURL=style.css.map */
