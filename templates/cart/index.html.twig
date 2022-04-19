@@ -19,7 +19,7 @@
             {% for element in cart.elements %}
                 <tr>
                     <td>{{element.poc.name }}</td>
-                    <td>{{element.poc.price }}£</td>
+                    <td>{{element.poc.price }}€</td>
                     <td><a href="{{ path('cart_remove', {'id': element.poc.id}) }}"><i class="fas fa-trash-alt"></i></a></td>
                 </tr>
             {% endfor %}
