@@ -1,8 +1,5 @@
 <?php
 
-// Ceci est le plus basique des controller qu'on puisse trouver
-// Il retourne une vue et fais passer une variable twig
-
 namespace App\Controller;
 
 use App\Repository\PocRepository;
@@ -18,7 +15,6 @@ class HomeController extends AbstractController
     public function index(PocRepository $pocRepository): Response
     {
         return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
             'pocs' => $pocRepository->findAll()
         ]);
     }

@@ -25,7 +25,6 @@ class CartController extends AbstractController
         // Ce que je trouve intéressant à ce niveau c'est que je comprends qu'un controller suis souvent ce schéma :
         // namespace, use, création de la class + héritage, fonction + injection de dépendance dans laquelle on fais appelle au méthode des class injectées avec dans tous les cas une redirection et des passages à la vue si besoin
         return $this->render('cart/index.html.twig', [
-            'controller_name' => 'CartController',
             'cart' => $cart
         ]);
     }

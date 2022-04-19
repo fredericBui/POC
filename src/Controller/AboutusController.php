@@ -13,8 +13,6 @@ class AboutusController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('aboutus/index.html.twig', [
-            'controller_name' => 'AboutusController',
-        ]);
+        return $this->render('aboutus/index.html.twig');
     }
 }
