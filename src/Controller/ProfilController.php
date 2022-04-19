@@ -93,15 +93,27 @@ class ProfilController extends AbstractController
     }
 
     /**
+     * @Route("/verifyEmail", name="profil_verify", methods={"GET"})
+     */
+    public function verify(): Response
+    {
+        return $this->render('profil/validerProfil.html.twig');
+    }
+
+    /**
      * @Route("/myPoc", name="profil_myPoc", methods={"GET"})
      */
     public function myPoc(PocRepository $pocRepository): Response
     {
-        return $this->render('profil/myPoc.html.twig', [
+        if($this->getUser()->isVerified() == false){
+            return $this->redirectToRoute('profil_verify', [], Response::HTTP_SEE_OTHER);
+        }else{
+            return $this->render('profil/myPoc.html.twig', [
             // Sélectionne uniquement les poc de l'utilisateur connecté
             'pocs' => $pocRepository->findBy(
                 ['author' => $this->getUser()]
-        )]);
+            )]);
+        }
     }
 
     /**
